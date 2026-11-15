@@ -1,0 +1,45 @@
+# Local-only material (kept on disk, never tracked)
+.claude/
+.superpowers/
+.worktrees/
+.adal/
+.agents/
+skills-lock.json
+docs/
+thesis/
+paper-said2027/
+iciit-template/
+/deploy/
+/*.docx
+/*.pdf
+
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+
+# Registered-evaluation run records. Machine-generated and large (heldout-c is
+# ~13 MB). SRCLA-REPORT.{md,json} IS tracked and carries the result, manifest and
+# dataset hashes, so a record can be re-derived with `pnpm phase4:run` and checked
+# against them. srcla/.gitignore has the same rule for runs written from srcla/.
+evaluation-heldout-*.json
+
+# LaTeX build output (paper/main.pdf is tracked on purpose)
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.cut
+*.toc
+
+# OS / editor / tool caches
+.DS_Store
+__pycache__/
+*.pyc
+.idea/
+.vscode/
+coverage/
