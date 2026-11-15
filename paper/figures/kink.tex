@@ -1,0 +1,24 @@
+% Thesis Figure 2.1, redrawn: kinked supply curve and the effect of a large deposit.
+\begin{tikzpicture}
+\begin{axis}[
+  width=\columnwidth, height=3.6cm,
+  xmin=0, xmax=1.02, ymin=0, ymax=1.05,
+  axis lines=left,
+  xtick={0,0.5,0.9,1}, xticklabels={0\%,50\%,90\%,100\%},
+  ytick=\empty,
+  xlabel={Utilization $U$}, ylabel={Supply rate},
+  tick label style={font=\scriptsize}, label style={font=\footnotesize},
+  clip=false,
+]
+  \addplot[black, line width=1pt] coordinates {(0,0.10) (0.9,0.26) (1.0,0.98)};
+  \draw[gray, dashed] (axis cs:0.9,0) -- (axis cs:0.9,1.05)
+     node[above, font=\scriptsize, black] {kink $U^{*}$};
+  \fill[cSRCLA] (axis cs:0.97,0.764) circle (1.8pt);
+  \fill[cSRCLA] (axis cs:0.80,0.242) circle (1.8pt);
+  \draw[-{Stealth[length=5pt]}, cSRCLA, line width=1pt]
+     (axis cs:0.965,0.764) to[out=180, in=90] (axis cs:0.80,0.27);
+  \node[font=\scriptsize, anchor=west] at (axis cs:0.975,0.70) {before};
+  \node[font=\scriptsize, anchor=north, align=center] at (axis cs:0.74,0.22)
+     {after the pool deposits};
+\end{axis}
+\end{tikzpicture}

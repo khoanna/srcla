@@ -1,0 +1,16 @@
+% Thesis Figures 5.6 and 5.7, redrawn from report/chart/SRCLA-SIZE-SWEEP-heldout-b.json.
+\begin{tikzpicture}
+\begin{groupplot}[
+  group style={group size=2 by 1, horizontal sep=1.6cm},
+  sweep, width=0.48\textwidth, height=5.0cm,
+]
+\nextgroupplot[ylabel={Net APY (\%, annualized)}, title={\footnotesize (a) Realized net APY},
+  legend to name=sweeplegendB]
+  \sweepplots{data/sweep-b-apy.dat}
+  \sweeplegend
+\nextgroupplot[ymin=-0.03, ymax=1.05, ylabel={Minimum coverage}, title={\footnotesize (b) Minimum stress coverage}]
+  \sweepplots{data/sweep-b-cov.dat}
+  \addplot[black, dashed, line width=0.6pt, domain=8000:12500000, samples=2, forget plot] {0.95};
+\end{groupplot}
+\end{tikzpicture}\\[2pt]
+\ref*{sweeplegendB}

@@ -1,0 +1,21 @@
+% Thesis Figures 5.1 and 5.2, redrawn from report/chart/SRCLA-SIZE-SWEEP-heldout-c.json
+% (the thesis calls this era heldout-a).
+\begin{tikzpicture}
+\begin{groupplot}[
+  group style={group size=2 by 1, horizontal sep=1.6cm},
+  sweep, width=0.48\textwidth, height=5.0cm,
+]
+\nextgroupplot[ymin=-0.1, ymax=4, ylabel={Net APY (\%)}, title={\footnotesize (a) Realized net APY},
+  legend to name=sweeplegendA]
+  \sweepplots{data/sweep-a-apy.dat}
+  \sweeplegend
+  \addplot[only marks, cSRCLA, mark=*, mark size=2.6pt, forget plot]
+    coordinates {(1e4,3.254) (1e5,3.259) (1e6,3.195) (1e7,2.547)};
+\nextgroupplot[ymin=-0.03, ymax=1.05, ylabel={Minimum coverage}, title={\footnotesize (b) Minimum stress coverage}]
+  \sweepplots{data/sweep-a-cov.dat}
+  \addplot[black, dashed, line width=0.6pt, domain=8000:12500000, samples=2, forget plot] {0.95};
+  \addplot[only marks, cSRCLA, mark=*, mark size=2.6pt, forget plot]
+    coordinates {(1e4,1) (1e5,1) (1e6,1) (1e7,1)};
+\end{groupplot}
+\end{tikzpicture}\\[2pt]
+\ref*{sweeplegendA}

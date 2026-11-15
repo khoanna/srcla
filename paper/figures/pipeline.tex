@@ -1,0 +1,61 @@
+% Thesis Figure 3.1, redrawn in English.
+\begin{tikzpicture}[
+  font=\footnotesize, node distance=3.2mm and 9mm,
+  stp/.style={draw=cSRCLA!70!black, fill=cSRCLA!8, rounded corners=2pt,
+               minimum width=62mm, minimum height=5.6mm, align=center},
+  io/.style={draw=black!60, fill=black!4, trapezium, trapezium left angle=72,
+             trapezium right angle=108, minimum width=50mm, align=center, inner sep=3pt},
+  test/.style={draw=orange!70!black, fill=orange!8, diamond, aspect=3.4,
+               inner sep=1pt, align=center},
+  hold/.style={draw=black!55, fill=black!6, rounded corners=2pt,
+               minimum width=40mm, minimum height=5.6mm, align=center},
+  term/.style={draw=black!70, rounded corners=7pt, minimum width=24mm,
+               minimum height=5.6mm, font=\footnotesize\bfseries},
+  arr/.style={-{Stealth[length=4pt]}, black!70},
+  lab/.style={font=\scriptsize\bfseries, black!70},
+]
+\node[term] (start) {Start};
+\node[io, below=of start] (in) {Market state, pool state,\\ frozen parameters};
+\node[test, below=of in] (paused) {Pool paused?};
+\node[stp, below=of paused] (admit) {Screen markets against nine rules};
+\node[test, below=of admit] (unwind) {Held market paused\\ or reconfigured?};
+\node[test, below=of unwind] (empty) {No market admitted?};
+\node[stp, below=of empty] (sim) {Evaluate post-deposit rates};
+\node[stp, below=of sim] (lb) {Forecast lower bound};
+\node[stp, below=of lb] (opt) {Optimize target weights};
+\node[stp, below=of opt] (turn) {Shrink target to the turnover budget};
+\node[stp, below=of turn] (res) {Compute required reserve};
+\node[stp, below=of res] (hurd) {Movement hurdle per leg, re-check feasibility,\\ partial adjustment};
+\node[stp, below=of hurd] (brake) {Brakes: cool-down, turnover, reversal};
+\node[test, below=of brake] (blocked) {Blocked by brakes or\\ no legs left?};
+\node[stp, below=of blocked] (plan) {Build plan: withdrawals first,\\ deposits after};
+\node[test, below=of plan] (noact) {Plan has no actions?};
+\node[stp, below=of noact] (reb) {Rebalance plan};
+\node[circle, draw=black!60, fill=black!10, inner sep=1.6pt, below=4mm of reb] (join) {};
+\node[stp, below=4mm of join] (rec) {Record the decision and its reasons};
+\node[term, below=of rec] (end) {End};
+
+\node[hold, right=of paused] (h1) {Hold: pool paused};
+\node[hold, right=of empty] (h2) {Hold: no eligible market};
+\node[hold, right=of blocked] (h3) {Hold: blocked};
+\node[hold, right=of noact] (h4) {Hold: nothing to move};
+\node[draw=red!60!black, fill=red!7, rounded corners=2pt, align=center,
+      minimum width=30mm, left=of unwind] (emerg) {Emergency unwind,\\ skips hurdles and brakes};
+\node[draw=black!40, dashed, rounded corners=2pt, align=center, font=\scriptsize,
+      text width=30mm, right=6mm of lb] (note) {At every step: missing, stale or contradictory evidence $\rightarrow$ error, no action (fail-closed)};
+
+\foreach \a/\b in {start/in,in/paused,paused/admit,admit/unwind,unwind/empty,empty/sim,sim/lb,lb/opt,
+                   opt/turn,turn/res,res/hurd,hurd/brake,brake/blocked,blocked/plan,plan/noact,noact/reb,
+                   reb/join,join/rec,rec/end}
+  \draw[arr] (\a) -- (\b);
+\foreach \t/\h in {paused/h1,empty/h2,blocked/h3,noact/h4}
+  \draw[arr] (\t) -- node[lab, above] {yes} (\h);
+\draw[arr] (unwind) -- node[lab, above] {yes} (emerg);
+\foreach \t in {paused,unwind,empty,blocked,noact}
+  \node[lab, below right=-0.5mm and 0.5mm of \t.south] {no};
+\coordinate (rail) at ($(h1.east)+(5mm,0)$);
+\foreach \h in {h1,h2,h3,h4}
+  \draw[black!70] (\h.east) -- (\h.east -| rail);
+\draw[arr] (h1.east -| rail) -- (join -| rail) -- (join);
+\draw[arr] (emerg.south) -- (emerg.south |- join) -- (join);
+\end{tikzpicture}

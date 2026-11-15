@@ -1,0 +1,49 @@
+% Shared macros and plot styles.
+\newcommand{\usdc}{USDC}
+\definecolor{cSRCLA}{HTML}{1F6FD6}
+\definecolor{cB0}{HTML}{3C3C3C}
+\definecolor{cB1}{HTML}{E8603C}
+\definecolor{cB2}{HTML}{1BAF7A}
+\definecolor{cB2u}{HTML}{8C8C8C}
+\definecolor{cB3}{HTML}{F0A500}
+\definecolor{cB4}{HTML}{E46F9A}
+\definecolor{cB5}{HTML}{7B52D3}
+\pgfplotsset{
+  sweep/.style={
+    xmode=log, log basis x=10,
+    width=\linewidth, height=5.2cm,
+    xmin=8000, xmax=12500000,
+    xtick={1e4,1e5,1e6,1e7},
+    xticklabels={10k,100k,1M,10M},
+    xlabel={Pool size (USDC, log scale)},
+    tick label style={font=\scriptsize},
+    label style={font=\footnotesize},
+    grid=major, grid style={gray!20},
+    every axis plot/.append style={line width=0.8pt, mark size=1.3pt},
+    legend style={font=\scriptsize, draw=none, fill=none, legend columns=4,
+                  column sep=4pt},
+    unbounded coords=jump,
+  },
+  pSRCLA/.style={cSRCLA, mark=*, line width=1.4pt},
+  pB0/.style={cB0, densely dotted, mark=square},
+  pB1/.style={cB1, dashed, mark=square*},
+  pB2/.style={cB2, mark=triangle*},
+  pB2u/.style={cB2u, dashed, mark=o},
+  pB3/.style={cB3, dashed, mark=diamond*},
+  pB4/.style={cB4, mark=triangle*, mark options={rotate=180}},
+  pB5/.style={cB5, dashdotted, mark=diamond},
+}
+% \sweepplots{<data file>}: the eight policies of the thesis sweep figures.
+\newcommand{\sweepplots}[1]{%
+  \addplot[pSRCLA] table[x=tier,y=srcla]{#1};
+  \addplot[pB0]    table[x=tier,y=b0]{#1};
+  \addplot[pB1]    table[x=tier,y=b1]{#1};
+  \addplot[pB2]    table[x=tier,y=b2]{#1};
+  \addplot[pB2u]   table[x=tier,y=b2u]{#1};
+  \addplot[pB3]    table[x=tier,y=b3]{#1};
+  \addplot[pB4]    table[x=tier,y=b4]{#1};
+  \addplot[pB5]    table[x=tier,y=b5]{#1};
+}
+\newcommand{\sweeplegend}{%
+  \legend{SRCLA, B0 idle, B1 highest displayed, B2 capacity-aware,
+          B2u B2 no reserve, B3 B2 + cost hurdle, B4 frozen equal split, B5 hindsight}}

@@ -1,0 +1,17 @@
+% Thesis Figures 5.3-5.5, redrawn from the Held-out A sweep.
+\begin{tikzpicture}
+\begin{groupplot}[
+  group style={group size=3 by 1, horizontal sep=1.5cm},
+  sweep, width=0.34\textwidth, height=4.8cm,
+]
+\nextgroupplot[ymin=-0.03, ymax=1.05, ylabel={Share deployed}, title={\footnotesize (a) Share deployed},
+  legend to name=sweeplegendAx]
+  \sweepplots{data/sweep-a-caw.dat}
+  \sweeplegend
+\nextgroupplot[ymin=2.4, ymax=4.0, ylabel={Yield on deployed (\%)}, title={\footnotesize (b) Yield on deployed capital}]
+  \sweepplots{data/sweep-a-yod.dat}
+\nextgroupplot[ymin=-0.3, ymax=0.7, ylabel={Advertised $-$ realized (pp)}, title={\footnotesize (c) Advertised minus realized}]
+  \sweepplots{data/sweep-a-gap.dat}
+\end{groupplot}
+\end{tikzpicture}\\[2pt]
+\ref*{sweeplegendAx}

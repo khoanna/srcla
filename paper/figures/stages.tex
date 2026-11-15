@@ -1,0 +1,53 @@
+% The six decision stages of SRCLA (thesis Figure 3.1), drawn left to right.
+% Coordinates are in millimetres; the figure spans \textwidth (171 mm).
+\begin{tikzpicture}[
+  x=1mm, y=1mm,
+  font=\scriptsize,
+  every node/.style={align=center},
+  stage/.style={draw=cSRCLA!75!black, fill=cSRCLA!7, rounded corners=1.5pt,
+                line width=0.6pt, minimum width=19.5mm, text width=18mm,
+                minimum height=16mm, inner sep=1.5pt},
+  data/.style={draw=black!50, fill=black!4, rounded corners=1.5pt, line width=0.5pt,
+               minimum width=16mm, text width=14.5mm, minimum height=16mm, inner sep=1.5pt},
+  outcome/.style={draw=black!55, fill=black!7, rounded corners=4pt, line width=0.5pt,
+                  minimum width=17mm, text width=15.5mm, minimum height=8mm, inner sep=1pt},
+  early/.style={draw=black!55, fill=black!7, rounded corners=4pt, line width=0.5pt,
+                minimum height=9mm, inner sep=1.5pt},
+  badge/.style={circle, fill=cSRCLA!80!black, text=white, font=\tiny\bfseries,
+                inner sep=0pt, minimum size=3.6mm},
+  arr/.style={-{Stealth[length=3.2pt, width=3pt]}, black!65, line width=0.55pt},
+  title/.style={font=\footnotesize\bfseries},
+]
+% input
+\node[data] (in) at (8,0) {\textbf{Inputs}\\[1pt] market state, pool state, frozen parameters};
+
+% stages
+\foreach \i/\x/\t/\d in {
+  1/28.5/Screening/nine admission rules,
+  2/50/Forecast/post-deposit rates and lower bound,
+  3/71.5/Allocation/liquidity-adjusted target weights,
+  4/93/Reserve/turnover budget and stress reserve,
+  5/114.5/Hurdles/cost test and partial adjustment,
+  6/136/Brakes/{cool-down, turnover and reversal limits}} {
+  \node[stage] (s\i) at (\x,0) {{\footnotesize\bfseries \t}\\[2pt] \d};
+  \node[badge] at (s\i.north west) {\i};
+}
+
+% main flow
+\draw[arr] (in) -- (s1);
+\foreach \a/\b in {1/2,2/3,3/4,4/5,5/6} \draw[arr] (s\a) -- (s\b);
+
+% final outcomes
+\node[outcome] (reb) at (159,5.5) {\textbf{Rebalance}\\ plan};
+\node[outcome] (hold) at (159,-5.5) {\textbf{Hold}};
+\coordinate (fork) at (148.5,0);
+\draw[black!65, line width=0.55pt] (s6.east) -- (fork);
+\draw[arr] (fork) |- (reb.west);
+\draw[arr] (fork) |- (hold.west);
+
+% early exits from Stage 1
+\node[early, text width=27mm] (emg) at (16,-19.5) {\textbf{Emergency withdrawal}\\ a held market is unsafe};
+\node[early, text width=30mm] (hold0) at (55,-19.5) {\textbf{Hold}\\ pool paused or no market eligible};
+\draw[arr] (s1.south -| 22,0) -- (emg.north -| 22,0);
+\draw[arr] (s1.south -| 33,0) |- (hold0.west);
+\end{tikzpicture}
