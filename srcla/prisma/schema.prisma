@@ -1,0 +1,419 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ─────────────────────────────────────────────────────────────
+// Withdrawal Events
+// ─────────────────────────────────────────────────────────────
+
+model WithdrawalEvent {
+  id          String   @id @default(cuid())
+  blockHash   String
+  timestamp   DateTime
+  sender      String
+  assets      String   // BigInt as string
+  shares      String   // BigInt as string
+  regimeId    String?
+
+  @@index([sender, timestamp])
+  @@index([timestamp])
+}
+
+// ─────────────────────────────────────────────────────────────
+// Chain State
+// ─────────────────────────────────────────────────────────────
+
+model ChainBlock {
+  id          String   @id @default(cuid())
+  chainId     Int
+  blockNumber BigInt
+  blockHash   String   @unique
+  timestamp   DateTime
+
+  @@index([chainId, blockNumber])
+  @@index([timestamp])
+}
+
+/// Per-origin MEASURED execution-cost inputs (paper §9.1's C_move terms).
+///
+/// Every field is read from chain at the origin's own block, replacing the
+/// five registered constants `scripts/run-registered-evaluation.ts`'s
+/// `harnessConfig()` asserted under a NOT OBSERVED banner. They ride in the
+/// same Multicall3 batch as the venue state, so they cost nothing extra to
+/// collect -- and H3 ablates the cost gate, so a constant-priced gate would
+/// make H3's result a statement about the constant rather than about the
+/// mechanism.
+///
+/// `l1BaseFeeWei`/`l1BlobBaseFeeWei`/the two scalars come from the OP-Stack
+/// GasPriceOracle predeploy 0x420...000F; `ethUsdE8`/`usdcUsdE8` from the Base
+/// Chainlink feeds; `l2BaseFeeWei` is the block header's own baseFeePerGas.
+model ChainCostSnapshot {
+  id               String   @id @default(cuid())
+  blockNumber      BigInt   @unique
+  blockHash        String
+  timestamp        DateTime
+
+  l2BaseFeeWei     String   // BigInt as string
+  l1BaseFeeWei     String   // BigInt as string
+  l1BlobBaseFeeWei String   // BigInt as string
+  /// OP-Stack fee scalars, so the L1 data cost is reproducible rather than
+  /// assumed. Null on blocks predating Ecotone, where the caller must fall
+  /// back to the pre-Ecotone formula rather than substituting a scalar.
+  baseFeeScalar     Int?
+  blobBaseFeeScalar Int?
+
+  ethUsdE8         String   // BigInt as string, 8 dp (Chainlink)
+  usdcUsdE8        String   // BigInt as string, 8 dp (Chainlink)
+  /// Chainlink round ids and update times, so a feed that was stale at this
+  /// origin is detectable after the fact rather than silently priced.
+  ethUsdRoundId    String?
+  usdcUsdRoundId   String?
+  ethUsdUpdatedAt  DateTime?
+  usdcUsdUpdatedAt DateTime?
+
+  @@index([timestamp])
+}
+
+model MarketSnapshot {
+  id               String   @id @default(cuid())
+  marketId         String
+  blockHash        String
+  timestamp        DateTime
+
+  // Core metrics
+  totalAssetsBase  String   // BigInt as string
+  idleBase         String
+  supplyRateE18    String
+  utilizationE18   String
+  cashBase         String
+  borrowsBase      String
+  reservesBase     String
+
+  // Raw protocol state in native integer units (paper §10.1).
+  // Compound III
+  cometSupplyBase  String?  // BigInt as string
+  cometBorrowBase  String?  // BigInt as string
+  // Aave V3
+  aaveVirtualBalBase String? // BigInt as string
+  aaveDebtBase       String? // BigInt as string
+  aaveDeficitBase    String? // BigInt as string
+  aaveReserveFactorBps Int?
+  // Moonwell
+  mwExchangeRate   String?  // BigInt as string
+  // Provenance
+  qualityFlags     String?
+
+  // Archive provenance (paper §10.1). The live collector keys on blockHash
+  // alone; a BACKFILLED row must also carry the height, because resume, gap
+  // detection and the manifest's pinned-block claim are all expressed in
+  // block numbers rather than hashes.
+  blockNumber      BigInt?
+  /// Protocol reserve factor, bps. Distinct from `aaveReserveFactorBps`,
+  /// which is Aave-specific by name; Compound III and Moonwell each carry one
+  /// too and it is a rate-model input, not a cosmetic field.
+  reserveFactorBps Int?
+  /// The address of the interest-rate model that produced the irm* fields.
+  /// NOT constant over a multi-year window -- Moonwell's mUSDC model was
+  /// 0x54dC...2445 at block 19_300_000 and 0x0F70...6cab at 35_338_178 -- so a
+  /// reader cannot infer which model a historical parameter set came from
+  /// without it.
+  irmAddress       String?
+  /// Which registered era this origin falls in ('calibration', 'heldout-a',
+  /// 'burned', 'heldout-b'), denormalised from src/evaluation/eras.ts at write
+  /// time so the SEALING GUARD is a database predicate rather than a
+  /// convention a query can forget to apply.
+  eraTag           String?
+
+  // Per-snapshot IRM parameters (paper §6.3-6.5) — the live registered
+  // rate-strategy inputs, captured alongside the state they governed, so a
+  // historical snapshot can be re-simulated with the parameters that were
+  // actually in force rather than today's DefaultConfigs. Kinked-linear
+  // shape (Compound/Moonwell) mirrors MarketObservation.irmParams in
+  // src/policy/types.ts; optimal/max utilization are Aave V3's quadratic
+  // model (src/protocols/simulation/types.ts AaveSimulatorConfig).
+  //
+  // POPULATED as of 2026-09-08 by the archive backfill
+  // (src/collector/archive/backfill.ts), on every row of the registered
+  // window. The LIVE collector reads the same parameters off chain too
+  // (SnapshotCollector.readCompoundIrm/readMoonwellIrm/readAaveIrm, 2026-09-10)
+  // but does not yet WRITE them to this table — the live snapshot upsert in
+  // src/runtime/scheduler.ts still persists only the state columns, so a row
+  // collected live carries NULL here. The live DECISION path does not read
+  // this table for them; it takes them straight off the collector.
+  irmBaseRateWad         String? // BigInt as string
+  irmKinkRay             String? // BigInt as string
+  irmSlopeLowWad         String? // BigInt as string
+  irmSlopeHighWad        String? // BigInt as string
+  irmOptimalUtilizationRay String? // BigInt as string
+  irmMaxUtilizationRay   String? // BigInt as string
+
+  // Configuration
+  capBps           Int
+  paused           Boolean
+  configDigest     String
+
+  // Relations
+  regime           ContractRegime? @relation(fields: [regimeId], references: [id])
+  regimeId         String?
+
+  @@unique([marketId, blockHash])
+  @@index([marketId, timestamp])
+  @@index([timestamp])
+  @@index([eraTag, timestamp])
+}
+
+model ContractRegime {
+  id       String   @id @default(cuid())
+  marketId String
+  digest   String   @unique
+  activatedAt DateTime
+
+  snapshots MarketSnapshot[]
+
+  @@index([marketId])
+}
+
+// ─────────────────────────────────────────────────────────────
+// Policy
+// ─────────────────────────────────────────────────────────────
+
+model PolicyVersion {
+  id           String   @id @default(cuid())
+  version      String   @unique
+  payload      Json
+  artifactHash String   @unique
+  createdAt    DateTime @default(now())
+  activatedAt  DateTime?
+  deactivatedAt DateTime?
+
+  decisions Decision[]
+
+  @@index([activatedAt])
+}
+
+// ─────────────────────────────────────────────────────────────
+// Forecasting
+// ─────────────────────────────────────────────────────────────
+
+model ForecastLabel {
+  id               String   @id @default(cuid())
+  marketId         String
+  originTimestamp  DateTime
+  horizonSeconds   Int
+  realizedReturnE18 String  // BigInt as string
+  availableAt      DateTime
+
+  // Provenance (paper §10.2) — reconstructable label lineage.
+  horizonEndsAt      DateTime?
+  regimeId           String?
+  realizedReturnWad  String?
+  realizedMinCashBase String?
+
+  @@index([marketId, availableAt])
+  @@index([availableAt])
+}
+
+model ForecastCalibration {
+  id           String   @id @default(cuid())
+  method       String   // 'rolling' | 'ew-residual' | 'arx'
+  config       Json     // Method-specific config
+  lossMetrics  Json     // Loss values
+  artifactHash String?
+  selected     Boolean @default(false)
+  createdAt    DateTime @default(now())
+
+  @@index([method, selected])
+}
+
+// ─────────────────────────────────────────────────────────────
+// Decisions
+// ─────────────────────────────────────────────────────────────
+
+model Decision {
+  id             String   @id @default(cuid())
+  decisionHash   String   @unique
+  policyVersion  String
+  snapshotHash   String
+  blockNumber    BigInt
+  timestamp      DateTime
+
+  // Decision components
+  admissions     Json     // Array of admission results
+  forecasts      Json     // Array of forecast results
+  reserveBase    String   // BigInt
+  allocation     Json     // Allocation result
+
+  // Action decision
+  actionDecision Json
+
+  // Relations
+  policy         PolicyVersion @relation(fields: [policyVersion], references: [version])
+  plans          ExecutionPlan[]
+
+  @@index([timestamp])
+  @@index([snapshotHash])
+}
+
+model ExecutionPlan {
+  id            String   @id @default(cuid())
+  planId        String   @unique
+  decisionHash  String
+  status        String   // 'pending' | 'active' | 'completed' | 'expired' | 'cancelled'
+  createdAt     DateTime
+  expiresAt     DateTime
+
+  // Relations
+  decision      Decision @relation(fields: [decisionHash], references: [decisionHash])
+  actions       PlanAction[]
+
+  @@index([status])
+  @@index([decisionHash])
+}
+
+model PlanAction {
+  id          String   @id @default(cuid())
+  planId     String
+  actionIndex Int
+  kind       String   // 'deploy' | 'divest' | 'harvest' | 'emergency'
+  adapter    String
+  amountBase String   // BigInt as string
+  status     String   // 'pending' | 'prepared' | 'submitted' | 'confirmed' | 'failed'
+  txHash     String?
+  error      String?
+
+  // Relations
+  plan        ExecutionPlan @relation(fields: [planId], references: [planId])
+
+  @@unique([planId, actionIndex])
+  @@index([status])
+}
+
+// ─────────────────────────────────────────────────────────────
+// Rewards
+// ─────────────────────────────────────────────────────────────
+
+model RewardObservation {
+  id          String   @id @default(cuid())
+  timestamp   DateTime
+  adapter     String
+  rewardToken String
+  claimable   String   // BigInt as string
+  priceUsd    String   // BigInt with 8 decimals
+  valueBase   String   // BigInt as string
+
+  @@index([adapter, timestamp])
+  @@index([rewardToken, timestamp])
+}
+
+model HarvestRecord {
+  id             String   @id @default(cuid())
+  timestamp      DateTime
+  adapter        String
+  rewardToken    String
+  routeId        String
+  amountIn       String   // BigInt as string
+  amountOutBase  String   // BigInt as string
+  decisionHash   String
+
+  @@index([timestamp])
+  @@index([adapter, timestamp])
+}
+
+// ─────────────────────────────────────────────────────────────
+// Evaluations
+// ─────────────────────────────────────────────────────────────
+
+model EvaluationRun {
+  id           String   @id @default(cuid())
+  manifestHash String   @unique
+  status       String   // 'running' | 'passed' | 'failed'
+  results      Json?
+  startedAt    DateTime @default(now())
+  completedAt  DateTime?
+
+  @@index([status])
+}
+
+// ─────────────────────────────────────────────────────────────
+// Decision provenance (paper §10.2) — candidates, stress rows,
+// enumeration regret, rejection reasons, and submission receipts,
+// so any decision is reconstructible from stored evidence.
+// ─────────────────────────────────────────────────────────────
+
+model CandidateAllocation {
+  id           String   @id @default(cuid())
+  decisionHash String
+  marketId     String
+  amountBase   String
+  lowerBoundWad String
+  exitableBps  Int
+  createdAt    DateTime @default(now())
+
+  @@index([decisionHash])
+}
+
+model StressCalculation {
+  id            String   @id @default(cuid())
+  decisionHash  String
+  scenario      String
+  demandBase    String
+  exitsBase     String
+  shortfallBase String
+  feasible      Boolean
+  createdAt     DateTime @default(now())
+
+  @@index([decisionHash])
+}
+
+model EnumerationResult {
+  id           String   @id @default(cuid())
+  decisionHash String   @unique
+  enumerated   Int
+  regretBps    String
+  passed       Boolean
+  createdAt    DateTime @default(now())
+}
+
+model RejectionReason {
+  id           String   @id @default(cuid())
+  decisionHash String
+  marketId     String
+  code         String
+  passed       Boolean
+  detail       String
+  createdAt    DateTime @default(now())
+
+  @@index([decisionHash])
+}
+
+model SubmissionReceipt {
+  id            String   @id @default(cuid())
+  planId        String
+  actionIndex   Int
+  txHash        String?
+  sender        String
+  nonce         Int
+  status        String
+  balanceDeltas String?
+  error         String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@unique([planId, actionIndex])
+  @@index([txHash])
+}
+
+model Incident {
+  id         String   @id @default(cuid())
+  kind       String
+  marketId   String?
+  detail     String
+  detectedAt DateTime @default(now())
+
+  @@index([kind])
+}
