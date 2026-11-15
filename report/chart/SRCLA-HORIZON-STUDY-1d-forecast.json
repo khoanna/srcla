@@ -1,0 +1,1622 @@
+{
+  "kind": "horizon-study-forecast",
+  "horizonDays": 1,
+  "artifactPath": "config/registered-artifact.json",
+  "artifactHash": "694cf86f6f7363f2f76a19ce66781ae82311ab1cbd2b7220b3aab94bda8223cf",
+  "method": "state-space",
+  "methodParams": {
+    "halfLifeObservations": 24
+  },
+  "coverageTarget": 0.99,
+  "selection": "selected state-space({\"halfLifeObservations\":24}) H=1d cov=0.99 at normalized total -26.99510334 (achieved coverage 99.00% on 30804 residuals); runner-up state-space({\"halfLifeObservations\":72}) H=1d cov=0.99 at -26.35312777, margin 6.420e-1; every term discriminated",
+  "origins": 11497,
+  "windowStart": "2025-06-01T00:00:00.000Z",
+  "windowEnd": "2026-09-23T00:00:00.000Z",
+  "labels": 34419,
+  "codeCommit": "11a69e71c99449f93506188d2226e3a1b888c241",
+  "generatedAt": "2026-09-23T08:42:17.880Z",
+  "pooled": {
+    "registered": {
+      "pass": false,
+      "blockedReasons": [
+        "Kupiec unconditional coverage — aave-v3-usdc",
+        "Christoffersen conditional coverage — aave-v3-usdc",
+        "Kupiec unconditional coverage — compound-v3-usdc",
+        "Christoffersen conditional coverage — compound-v3-usdc",
+        "Kupiec unconditional coverage — moonwell-usdc",
+        "Christoffersen conditional coverage — moonwell-usdc"
+      ],
+      "venues": [
+        {
+          "marketId": "aave-v3-usdc",
+          "observations": 10169,
+          "achievedCoverage": 1,
+          "exceedances": 0,
+          "kupiec": {
+            "lr": 204.4037305885125,
+            "pValue": 0
+          },
+          "christoffersen": {
+            "lrCc": 8.824194879374273,
+            "lrInd": 0,
+            "pValue": 0.0121297102946522,
+            "observations": 439
+          }
+        },
+        {
+          "marketId": "compound-v3-usdc",
+          "observations": 11443,
+          "achievedCoverage": 0.9983395962597221,
+          "exceedances": 19,
+          "kupiec": {
+            "lr": 123.43171520680005,
+            "pValue": 0
+          },
+          "christoffersen": {
+            "lrCc": 9.588020404240384,
+            "lrInd": 0,
+            "pValue": 0.008279189497759654,
+            "observations": 477
+          }
+        },
+        {
+          "marketId": "moonwell-usdc",
+          "observations": 11203,
+          "achievedCoverage": 0.9852718021958404,
+          "exceedances": 165,
+          "kupiec": {
+            "lr": 22.082384010188434,
+            "pValue": 0.0000026149831051647254
+          },
+          "christoffersen": {
+            "lrCc": 10.948055687919577,
+            "lrInd": 10.614056709169645,
+            "pValue": 0.004194304086687145,
+            "observations": 470
+          }
+        }
+      ],
+      "checks": [
+        {
+          "name": "Per-venue coverage — aave-v3-usdc",
+          "passed": true,
+          "detail": "achieved 100.00% against target 99.00% (tolerance 1.00pp, floor 98.00%) on 10169 out-of-sample residuals, q=-1.1195e-4",
+          "gating": true
+        },
+        {
+          "name": "Kupiec unconditional coverage — aave-v3-usdc",
+          "passed": false,
+          "detail": "LR_uc 204.4037, p 0.0000 < 0.05 — breach rate 0.00% against expected 1.00%",
+          "gating": true
+        },
+        {
+          "name": "Christoffersen conditional coverage — aave-v3-usdc",
+          "passed": false,
+          "detail": "LR_cc 8.8242 (LR_ind 0.0000), p 0.0121 < 0.05 on 439 non-overlapping windows",
+          "gating": true
+        },
+        {
+          "name": "Per-venue coverage — compound-v3-usdc",
+          "passed": true,
+          "detail": "achieved 99.83% against target 99.00% (tolerance 1.00pp, floor 98.00%) on 11443 out-of-sample residuals, q=-5.7725e-5",
+          "gating": true
+        },
+        {
+          "name": "Kupiec unconditional coverage — compound-v3-usdc",
+          "passed": false,
+          "detail": "LR_uc 123.4317, p 0.0000 < 0.05 — breach rate 0.17% against expected 1.00%",
+          "gating": true
+        },
+        {
+          "name": "Christoffersen conditional coverage — compound-v3-usdc",
+          "passed": false,
+          "detail": "LR_cc 9.5880 (LR_ind 0.0000), p 0.0083 < 0.05 on 477 non-overlapping windows",
+          "gating": true
+        },
+        {
+          "name": "Per-venue coverage — moonwell-usdc",
+          "passed": true,
+          "detail": "achieved 98.53% against target 99.00% (tolerance 1.00pp, floor 98.00%) on 11203 out-of-sample residuals, q=-8.5493e-5",
+          "gating": true
+        },
+        {
+          "name": "Kupiec unconditional coverage — moonwell-usdc",
+          "passed": false,
+          "detail": "LR_uc 22.0824, p 0.0000 < 0.05 — breach rate 1.47% against expected 1.00%",
+          "gating": true
+        },
+        {
+          "name": "Christoffersen conditional coverage — moonwell-usdc",
+          "passed": false,
+          "detail": "LR_cc 10.9481 (LR_ind 10.6141), p 0.0042 < 0.05 on 470 non-overlapping windows",
+          "gating": true
+        },
+        {
+          "name": "Label completeness",
+          "passed": true,
+          "detail": "worst venue aave-v3-usdc at 100.00% of 11473 origins (floor 99.00%); aave-v3-usdc 100.00%, compound-v3-usdc 100.00%, moonwell-usdc 100.00%",
+          "gating": true
+        },
+        {
+          "name": "Regime purity",
+          "passed": true,
+          "detail": "1231 of 34419 label windows straddle a regime change (3.58%, tolerance 10%): aave-v3-usdc@1748883600 (aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:55000000000000000:400000000000000000:active -> aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:2500000000000000:900000000000000000000000000:55000000000000000:400000000000000000:active at 1748970000, inside [origin, origin+H]); aave-v3-usdc@1748887200 (aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:55000000000000000:400000000000000000:active -> aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:2500000000000000:900000000000000000000000000:55000000000000000:400000000000000000:active at 1748970000, inside [origin, origin+H]); aave-v3-usdc@1748890800 (aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:55000000000000000:400000000000000000:active -> aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:2500000000000000:900000000000000000000000000:55000000000000000:400000000000000000:active at 1748970000, inside [origin, origin+H])",
+          "gating": true
+        },
+        {
+          "name": "Availability-lag barrier",
+          "passed": true,
+          "detail": "all 34419 labels are readable no earlier than origin + 86400s + 900s lag",
+          "gating": true
+        },
+        {
+          "name": "Registered grid points present",
+          "passed": true,
+          "detail": "swept 36, scorable 36, registered grid 36",
+          "gating": true
+        },
+        {
+          "name": "Selection margin",
+          "passed": true,
+          "detail": "margin 6.4198e-1 against the registered floor 1e-3",
+          "gating": true
+        },
+        {
+          "name": "Artifact reproducibility",
+          "passed": true,
+          "detail": "content hash re-derives from the artifact body: 694cf86f6f7363f2f76a19ce66781ae82311ab1cbd2b7220b3aab94bda8223cf",
+          "gating": true
+        },
+        {
+          "name": "Calibrated artifact",
+          "passed": true,
+          "detail": "artifact is registered, not provisional",
+          "gating": true
+        },
+        {
+          "name": "Artifact completeness (P23)",
+          "passed": true,
+          "detail": "the artifact carries every field the policy reads",
+          "gating": true
+        }
+      ]
+    },
+    "p37": {
+      "pass": false,
+      "blockedReasons": [
+        "Kupiec unconditional coverage, one-sided — moonwell-usdc",
+        "Christoffersen independence — moonwell-usdc"
+      ],
+      "venues": [
+        {
+          "marketId": "aave-v3-usdc",
+          "observations": 10169,
+          "achievedCoverage": 1,
+          "exceedances": 0,
+          "kupiec": {
+            "lr": 204.4037305885125,
+            "pValue": 1
+          },
+          "christoffersen": {
+            "lrCc": 8.824194879374273,
+            "lrInd": 0,
+            "pValue": 0.0121297102946522,
+            "observations": 439
+          }
+        },
+        {
+          "marketId": "compound-v3-usdc",
+          "observations": 11443,
+          "achievedCoverage": 0.9983395962597221,
+          "exceedances": 19,
+          "kupiec": {
+            "lr": 123.43171520680005,
+            "pValue": 1
+          },
+          "christoffersen": {
+            "lrCc": 9.588020404240384,
+            "lrInd": 0,
+            "pValue": 0.008279189497759654,
+            "observations": 477
+          }
+        },
+        {
+          "marketId": "moonwell-usdc",
+          "observations": 10569,
+          "achievedCoverage": 0.9865644810294257,
+          "exceedances": 142,
+          "kupiec": {
+            "lr": 11.37611428688706,
+            "pValue": 0.00037202640956279787
+          },
+          "christoffersen": {
+            "lrCc": 12.235668687985807,
+            "lrInd": 12.16454426632005,
+            "pValue": 0.0022032222215806097,
+            "observations": 443
+          }
+        }
+      ],
+      "checks": [
+        {
+          "name": "Per-venue coverage, P34 domain — aave-v3-usdc",
+          "passed": true,
+          "detail": "achieved 100.00% against target 99.00% (tolerance 1.00pp, floor 98.00%) on 10169 out-of-sample residuals, q=-1.1195e-4; P34 domain: 0 residual(s) excluded, 0 of them breaches",
+          "gating": true
+        },
+        {
+          "name": "Kupiec unconditional coverage, one-sided — aave-v3-usdc",
+          "passed": true,
+          "detail": "LR_uc 204.4037, one-sided p 1.0000 >= 0.05 — breach rate 0.00% against expected 1.00%; two-sided p 0.0000 reported, not gated; P34 domain: 0 residual(s) excluded, 0 of them breaches",
+          "gating": true
+        },
+        {
+          "name": "Christoffersen independence — aave-v3-usdc",
+          "passed": true,
+          "detail": "LR_ind 0.0000, p 1.0000 >= 0.05 on 439 non-overlapping windows; LR_cc 8.8242 reported, not gated (its unconditional half is the two-sided statistic P37 replaces); P34 domain: 0 residual(s) excluded, 0 of them breaches",
+          "gating": true
+        },
+        {
+          "name": "Per-venue coverage, P34 domain — compound-v3-usdc",
+          "passed": true,
+          "detail": "achieved 99.83% against target 99.00% (tolerance 1.00pp, floor 98.00%) on 11443 out-of-sample residuals, q=-5.7725e-5; P34 domain: 0 residual(s) excluded, 0 of them breaches",
+          "gating": true
+        },
+        {
+          "name": "Kupiec unconditional coverage, one-sided — compound-v3-usdc",
+          "passed": true,
+          "detail": "LR_uc 123.4317, one-sided p 1.0000 >= 0.05 — breach rate 0.17% against expected 1.00%; two-sided p 0.0000 reported, not gated; P34 domain: 0 residual(s) excluded, 0 of them breaches",
+          "gating": true
+        },
+        {
+          "name": "Christoffersen independence — compound-v3-usdc",
+          "passed": true,
+          "detail": "LR_ind 0.0000, p 1.0000 >= 0.05 on 477 non-overlapping windows; LR_cc 9.5880 reported, not gated (its unconditional half is the two-sided statistic P37 replaces); P34 domain: 0 residual(s) excluded, 0 of them breaches",
+          "gating": true
+        },
+        {
+          "name": "Per-venue coverage, P34 domain — moonwell-usdc",
+          "passed": true,
+          "detail": "achieved 98.66% against target 99.00% (tolerance 1.00pp, floor 98.00%) on 10569 out-of-sample residuals, q=-8.5493e-5; P34 domain: 634 residual(s) excluded, 23 of them breaches",
+          "gating": true
+        },
+        {
+          "name": "Kupiec unconditional coverage, one-sided — moonwell-usdc",
+          "passed": false,
+          "detail": "LR_uc 11.3761, one-sided p 0.0004 < 0.05 — breach rate 1.34% against expected 1.00%; two-sided p 0.0007 reported, not gated; P34 domain: 634 residual(s) excluded, 23 of them breaches",
+          "gating": true
+        },
+        {
+          "name": "Christoffersen independence — moonwell-usdc",
+          "passed": false,
+          "detail": "LR_ind 12.1645, p 0.0005 < 0.05 on 443 non-overlapping windows; LR_cc 12.2357 reported, not gated (its unconditional half is the two-sided statistic P37 replaces); P34 domain: 634 residual(s) excluded, 23 of them breaches",
+          "gating": true
+        },
+        {
+          "name": "Label completeness",
+          "passed": true,
+          "detail": "worst venue aave-v3-usdc at 100.00% of 11473 origins (floor 99.00%); aave-v3-usdc 100.00%, compound-v3-usdc 100.00%, moonwell-usdc 100.00%",
+          "gating": true
+        },
+        {
+          "name": "Regime purity",
+          "passed": true,
+          "detail": "1231 of 34419 label windows straddle a regime change (3.58%, tolerance 10%): aave-v3-usdc@1748883600 (aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:55000000000000000:400000000000000000:active -> aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:2500000000000000:900000000000000000000000000:55000000000000000:400000000000000000:active at 1748970000, inside [origin, origin+H]); aave-v3-usdc@1748887200 (aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:55000000000000000:400000000000000000:active -> aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:2500000000000000:900000000000000000000000000:55000000000000000:400000000000000000:active at 1748970000, inside [origin, origin+H]); aave-v3-usdc@1748890800 (aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:55000000000000000:400000000000000000:active -> aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:2500000000000000:900000000000000000000000000:55000000000000000:400000000000000000:active at 1748970000, inside [origin, origin+H])",
+          "gating": true
+        },
+        {
+          "name": "Availability-lag barrier",
+          "passed": true,
+          "detail": "all 34419 labels are readable no earlier than origin + 86400s + 900s lag",
+          "gating": true
+        },
+        {
+          "name": "Registered grid points present",
+          "passed": true,
+          "detail": "swept 36, scorable 36, registered grid 36",
+          "gating": true
+        },
+        {
+          "name": "Selection margin",
+          "passed": true,
+          "detail": "margin 6.4198e-1 against the registered floor 1e-3",
+          "gating": true
+        },
+        {
+          "name": "Artifact reproducibility",
+          "passed": true,
+          "detail": "content hash re-derives from the artifact body: 694cf86f6f7363f2f76a19ce66781ae82311ab1cbd2b7220b3aab94bda8223cf",
+          "gating": true
+        },
+        {
+          "name": "Calibrated artifact",
+          "passed": true,
+          "detail": "artifact is registered, not provisional",
+          "gating": true
+        },
+        {
+          "name": "Artifact completeness (P23)",
+          "passed": true,
+          "detail": "the artifact carries every field the policy reads",
+          "gating": true
+        }
+      ]
+    }
+  },
+  "bySubEra": {
+    "burned-a": {
+      "registered": {
+        "pass": false,
+        "blockedReasons": [
+          "Kupiec unconditional coverage — aave-v3-usdc",
+          "Kupiec unconditional coverage — compound-v3-usdc",
+          "Christoffersen conditional coverage — moonwell-usdc"
+        ],
+        "venues": [
+          {
+            "marketId": "aave-v3-usdc",
+            "observations": 6192,
+            "achievedCoverage": 1,
+            "exceedances": 0,
+            "kupiec": {
+              "lr": 124.46335920976196,
+              "pValue": 0
+            },
+            "christoffersen": {
+              "lrCc": 5.26637598723476,
+              "lrInd": 0,
+              "pValue": 0.07184904244991484,
+              "observations": 262
+            }
+          },
+          {
+            "marketId": "compound-v3-usdc",
+            "observations": 6522,
+            "achievedCoverage": 0.9970867831953388,
+            "exceedances": 19,
+            "kupiec": {
+              "lr": 45.90363979289498,
+              "pValue": 1.2493117651501962e-11
+            },
+            "christoffersen": {
+              "lrCc": 5.467382704304789,
+              "lrInd": 0,
+              "pValue": 0.06497898609824963,
+              "observations": 272
+            }
+          },
+          {
+            "marketId": "moonwell-usdc",
+            "observations": 6402,
+            "achievedCoverage": 0.9903155263980006,
+            "exceedances": 62,
+            "kupiec": {
+              "lr": 0.06506119536993538,
+              "pValue": 0.7986684061954739
+            },
+            "christoffersen": {
+              "lrCc": 7.8241799154127225,
+              "lrInd": 7.6331170571130915,
+              "pValue": 0.019998660999260773,
+              "observations": 268
+            }
+          }
+        ],
+        "checks": [
+          {
+            "name": "Per-venue coverage — aave-v3-usdc",
+            "passed": true,
+            "detail": "achieved 100.00% against target 99.00% (tolerance 1.00pp, floor 98.00%) on 6192 out-of-sample residuals, q=-1.1195e-4",
+            "gating": true
+          },
+          {
+            "name": "Kupiec unconditional coverage — aave-v3-usdc",
+            "passed": false,
+            "detail": "LR_uc 124.4634, p 0.0000 < 0.05 — breach rate 0.00% against expected 1.00%",
+            "gating": true
+          },
+          {
+            "name": "Christoffersen conditional coverage — aave-v3-usdc",
+            "passed": true,
+            "detail": "LR_cc 5.2664 (LR_ind 0.0000), p 0.0718 >= 0.05 on 262 non-overlapping windows",
+            "gating": true
+          },
+          {
+            "name": "Per-venue coverage — compound-v3-usdc",
+            "passed": true,
+            "detail": "achieved 99.71% against target 99.00% (tolerance 1.00pp, floor 98.00%) on 6522 out-of-sample residuals, q=-5.7725e-5",
+            "gating": true
+          },
+          {
+            "name": "Kupiec unconditional coverage — compound-v3-usdc",
+            "passed": false,
+            "detail": "LR_uc 45.9036, p 0.0000 < 0.05 — breach rate 0.29% against expected 1.00%",
+            "gating": true
+          },
+          {
+            "name": "Christoffersen conditional coverage — compound-v3-usdc",
+            "passed": true,
+            "detail": "LR_cc 5.4674 (LR_ind 0.0000), p 0.0650 >= 0.05 on 272 non-overlapping windows",
+            "gating": true
+          },
+          {
+            "name": "Per-venue coverage — moonwell-usdc",
+            "passed": true,
+            "detail": "achieved 99.03% against target 99.00% (tolerance 1.00pp, floor 98.00%) on 6402 out-of-sample residuals, q=-8.5493e-5",
+            "gating": true
+          },
+          {
+            "name": "Kupiec unconditional coverage — moonwell-usdc",
+            "passed": true,
+            "detail": "LR_uc 0.0651, p 0.7987 >= 0.05 — breach rate 0.97% against expected 1.00%",
+            "gating": true
+          },
+          {
+            "name": "Christoffersen conditional coverage — moonwell-usdc",
+            "passed": false,
+            "detail": "LR_cc 7.8242 (LR_ind 7.6331), p 0.0200 < 0.05 on 268 non-overlapping windows",
+            "gating": true
+          },
+          {
+            "name": "Label completeness",
+            "passed": true,
+            "detail": "worst venue aave-v3-usdc at 100.00% of 6552 origins (floor 99.00%); aave-v3-usdc 100.00%, compound-v3-usdc 100.00%, moonwell-usdc 100.00%",
+            "gating": true
+          },
+          {
+            "name": "Regime purity",
+            "passed": true,
+            "detail": "360 of 19656 label windows straddle a regime change (1.83%, tolerance 10%): aave-v3-usdc@1748883600 (aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:55000000000000000:400000000000000000:active -> aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:2500000000000000:900000000000000000000000000:55000000000000000:400000000000000000:active at 1748970000, inside [origin, origin+H]); aave-v3-usdc@1748887200 (aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:55000000000000000:400000000000000000:active -> aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:2500000000000000:900000000000000000000000000:55000000000000000:400000000000000000:active at 1748970000, inside [origin, origin+H]); aave-v3-usdc@1748890800 (aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:55000000000000000:400000000000000000:active -> aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:2500000000000000:900000000000000000000000000:55000000000000000:400000000000000000:active at 1748970000, inside [origin, origin+H])",
+            "gating": true
+          },
+          {
+            "name": "Availability-lag barrier",
+            "passed": true,
+            "detail": "all 19656 labels are readable no earlier than origin + 86400s + 900s lag",
+            "gating": true
+          },
+          {
+            "name": "Registered grid points present",
+            "passed": true,
+            "detail": "swept 36, scorable 36, registered grid 36",
+            "gating": true
+          },
+          {
+            "name": "Selection margin",
+            "passed": true,
+            "detail": "margin 6.4198e-1 against the registered floor 1e-3",
+            "gating": true
+          },
+          {
+            "name": "Artifact reproducibility",
+            "passed": true,
+            "detail": "content hash re-derives from the artifact body: 694cf86f6f7363f2f76a19ce66781ae82311ab1cbd2b7220b3aab94bda8223cf",
+            "gating": true
+          },
+          {
+            "name": "Calibrated artifact",
+            "passed": true,
+            "detail": "artifact is registered, not provisional",
+            "gating": true
+          },
+          {
+            "name": "Artifact completeness (P23)",
+            "passed": true,
+            "detail": "the artifact carries every field the policy reads",
+            "gating": true
+          }
+        ]
+      },
+      "p37": {
+        "pass": false,
+        "blockedReasons": [
+          "Christoffersen independence — moonwell-usdc"
+        ],
+        "venues": [
+          {
+            "marketId": "aave-v3-usdc",
+            "observations": 6192,
+            "achievedCoverage": 1,
+            "exceedances": 0,
+            "kupiec": {
+              "lr": 124.46335920976196,
+              "pValue": 1
+            },
+            "christoffersen": {
+              "lrCc": 5.26637598723476,
+              "lrInd": 0,
+              "pValue": 0.07184904244991484,
+              "observations": 262
+            }
+          },
+          {
+            "marketId": "compound-v3-usdc",
+            "observations": 6522,
+            "achievedCoverage": 0.9970867831953388,
+            "exceedances": 19,
+            "kupiec": {
+              "lr": 45.90363979289498,
+              "pValue": 1
+            },
+            "christoffersen": {
+              "lrCc": 5.467382704304789,
+              "lrInd": 0,
+              "pValue": 0.06497898609824963,
+              "observations": 272
+            }
+          },
+          {
+            "marketId": "moonwell-usdc",
+            "observations": 6374,
+            "achievedCoverage": 0.9902729839974898,
+            "exceedances": 62,
+            "kupiec": {
+              "lr": 0.04841717689396319,
+              "pValue": 1
+            },
+            "christoffersen": {
+              "lrCc": 7.811598485891084,
+              "lrInd": 7.625626830378662,
+              "pValue": 0.020124863406694407,
+              "observations": 267
+            }
+          }
+        ],
+        "checks": [
+          {
+            "name": "Per-venue coverage, P34 domain — aave-v3-usdc",
+            "passed": true,
+            "detail": "achieved 100.00% against target 99.00% (tolerance 1.00pp, floor 98.00%) on 6192 out-of-sample residuals, q=-1.1195e-4; P34 domain: 0 residual(s) excluded, 0 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Kupiec unconditional coverage, one-sided — aave-v3-usdc",
+            "passed": true,
+            "detail": "LR_uc 124.4634, one-sided p 1.0000 >= 0.05 — breach rate 0.00% against expected 1.00%; two-sided p 0.0000 reported, not gated; P34 domain: 0 residual(s) excluded, 0 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Christoffersen independence — aave-v3-usdc",
+            "passed": true,
+            "detail": "LR_ind 0.0000, p 1.0000 >= 0.05 on 262 non-overlapping windows; LR_cc 5.2664 reported, not gated (its unconditional half is the two-sided statistic P37 replaces); P34 domain: 0 residual(s) excluded, 0 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Per-venue coverage, P34 domain — compound-v3-usdc",
+            "passed": true,
+            "detail": "achieved 99.71% against target 99.00% (tolerance 1.00pp, floor 98.00%) on 6522 out-of-sample residuals, q=-5.7725e-5; P34 domain: 0 residual(s) excluded, 0 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Kupiec unconditional coverage, one-sided — compound-v3-usdc",
+            "passed": true,
+            "detail": "LR_uc 45.9036, one-sided p 1.0000 >= 0.05 — breach rate 0.29% against expected 1.00%; two-sided p 0.0000 reported, not gated; P34 domain: 0 residual(s) excluded, 0 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Christoffersen independence — compound-v3-usdc",
+            "passed": true,
+            "detail": "LR_ind 0.0000, p 1.0000 >= 0.05 on 272 non-overlapping windows; LR_cc 5.4674 reported, not gated (its unconditional half is the two-sided statistic P37 replaces); P34 domain: 0 residual(s) excluded, 0 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Per-venue coverage, P34 domain — moonwell-usdc",
+            "passed": true,
+            "detail": "achieved 99.03% against target 99.00% (tolerance 1.00pp, floor 98.00%) on 6374 out-of-sample residuals, q=-8.5493e-5; P34 domain: 28 residual(s) excluded, 0 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Kupiec unconditional coverage, one-sided — moonwell-usdc",
+            "passed": true,
+            "detail": "LR_uc 0.0484, one-sided p 1.0000 >= 0.05 — breach rate 0.97% against expected 1.00%; two-sided p 0.8258 reported, not gated; P34 domain: 28 residual(s) excluded, 0 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Christoffersen independence — moonwell-usdc",
+            "passed": false,
+            "detail": "LR_ind 7.6256, p 0.0058 < 0.05 on 267 non-overlapping windows; LR_cc 7.8116 reported, not gated (its unconditional half is the two-sided statistic P37 replaces); P34 domain: 28 residual(s) excluded, 0 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Label completeness",
+            "passed": true,
+            "detail": "worst venue aave-v3-usdc at 100.00% of 6552 origins (floor 99.00%); aave-v3-usdc 100.00%, compound-v3-usdc 100.00%, moonwell-usdc 100.00%",
+            "gating": true
+          },
+          {
+            "name": "Regime purity",
+            "passed": true,
+            "detail": "360 of 19656 label windows straddle a regime change (1.83%, tolerance 10%): aave-v3-usdc@1748883600 (aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:55000000000000000:400000000000000000:active -> aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:2500000000000000:900000000000000000000000000:55000000000000000:400000000000000000:active at 1748970000, inside [origin, origin+H]); aave-v3-usdc@1748887200 (aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:55000000000000000:400000000000000000:active -> aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:2500000000000000:900000000000000000000000000:55000000000000000:400000000000000000:active at 1748970000, inside [origin, origin+H]); aave-v3-usdc@1748890800 (aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:55000000000000000:400000000000000000:active -> aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:2500000000000000:900000000000000000000000000:55000000000000000:400000000000000000:active at 1748970000, inside [origin, origin+H])",
+            "gating": true
+          },
+          {
+            "name": "Availability-lag barrier",
+            "passed": true,
+            "detail": "all 19656 labels are readable no earlier than origin + 86400s + 900s lag",
+            "gating": true
+          },
+          {
+            "name": "Registered grid points present",
+            "passed": true,
+            "detail": "swept 36, scorable 36, registered grid 36",
+            "gating": true
+          },
+          {
+            "name": "Selection margin",
+            "passed": true,
+            "detail": "margin 6.4198e-1 against the registered floor 1e-3",
+            "gating": true
+          },
+          {
+            "name": "Artifact reproducibility",
+            "passed": true,
+            "detail": "content hash re-derives from the artifact body: 694cf86f6f7363f2f76a19ce66781ae82311ab1cbd2b7220b3aab94bda8223cf",
+            "gating": true
+          },
+          {
+            "name": "Calibrated artifact",
+            "passed": true,
+            "detail": "artifact is registered, not provisional",
+            "gating": true
+          },
+          {
+            "name": "Artifact completeness (P23)",
+            "passed": true,
+            "detail": "the artifact carries every field the policy reads",
+            "gating": true
+          }
+        ]
+      }
+    },
+    "heldout-c": {
+      "registered": {
+        "pass": false,
+        "blockedReasons": [
+          "Kupiec unconditional coverage — aave-v3-usdc",
+          "Kupiec unconditional coverage — compound-v3-usdc",
+          "Kupiec unconditional coverage — moonwell-usdc"
+        ],
+        "venues": [
+          {
+            "marketId": "aave-v3-usdc",
+            "observations": 1600,
+            "achievedCoverage": 1,
+            "exceedances": 0,
+            "kupiec": {
+              "lr": 32.16107473120464,
+              "pValue": 1.4230596701025888e-8
+            },
+            "christoffersen": {
+              "lrCc": 1.447248362904209,
+              "lrInd": 0,
+              "pValue": 0.4849913702741628,
+              "observations": 72
+            }
+          },
+          {
+            "marketId": "compound-v3-usdc",
+            "observations": 2034,
+            "achievedCoverage": 1,
+            "exceedances": 0,
+            "kupiec": {
+              "lr": 40.8847662520439,
+              "pValue": 1.6222179155533922e-10
+            },
+            "christoffersen": {
+              "lrCc": 1.7085570950952467,
+              "lrInd": 0,
+              "pValue": 0.42559012338865454,
+              "observations": 85
+            }
+          },
+          {
+            "marketId": "moonwell-usdc",
+            "observations": 1974,
+            "achievedCoverage": 1,
+            "exceedances": 0,
+            "kupiec": {
+              "lr": 39.678725949623725,
+              "pValue": 3.006741522426637e-10
+            },
+            "christoffersen": {
+              "lrCc": 1.6683557516812408,
+              "lrInd": 0,
+              "pValue": 0.43423132679181164,
+              "observations": 83
+            }
+          }
+        ],
+        "checks": [
+          {
+            "name": "Per-venue coverage — aave-v3-usdc",
+            "passed": true,
+            "detail": "achieved 100.00% against target 99.00% (tolerance 1.00pp, floor 98.00%) on 1600 out-of-sample residuals, q=-1.1195e-4",
+            "gating": true
+          },
+          {
+            "name": "Kupiec unconditional coverage — aave-v3-usdc",
+            "passed": false,
+            "detail": "LR_uc 32.1611, p 0.0000 < 0.05 — breach rate 0.00% against expected 1.00%",
+            "gating": true
+          },
+          {
+            "name": "Christoffersen conditional coverage — aave-v3-usdc",
+            "passed": true,
+            "detail": "LR_cc 1.4472 (LR_ind 0.0000), p 0.4850 >= 0.05 on 72 non-overlapping windows",
+            "gating": true
+          },
+          {
+            "name": "Per-venue coverage — compound-v3-usdc",
+            "passed": true,
+            "detail": "achieved 100.00% against target 99.00% (tolerance 1.00pp, floor 98.00%) on 2034 out-of-sample residuals, q=-5.7725e-5",
+            "gating": true
+          },
+          {
+            "name": "Kupiec unconditional coverage — compound-v3-usdc",
+            "passed": false,
+            "detail": "LR_uc 40.8848, p 0.0000 < 0.05 — breach rate 0.00% against expected 1.00%",
+            "gating": true
+          },
+          {
+            "name": "Christoffersen conditional coverage — compound-v3-usdc",
+            "passed": true,
+            "detail": "LR_cc 1.7086 (LR_ind 0.0000), p 0.4256 >= 0.05 on 85 non-overlapping windows",
+            "gating": true
+          },
+          {
+            "name": "Per-venue coverage — moonwell-usdc",
+            "passed": true,
+            "detail": "achieved 100.00% against target 99.00% (tolerance 1.00pp, floor 98.00%) on 1974 out-of-sample residuals, q=-8.5493e-5",
+            "gating": true
+          },
+          {
+            "name": "Kupiec unconditional coverage — moonwell-usdc",
+            "passed": false,
+            "detail": "LR_uc 39.6787, p 0.0000 < 0.05 — breach rate 0.00% against expected 1.00%",
+            "gating": true
+          },
+          {
+            "name": "Christoffersen conditional coverage — moonwell-usdc",
+            "passed": true,
+            "detail": "LR_cc 1.6684 (LR_ind 0.0000), p 0.4342 >= 0.05 on 83 non-overlapping windows",
+            "gating": true
+          },
+          {
+            "name": "Label completeness",
+            "passed": true,
+            "detail": "worst venue aave-v3-usdc at 100.00% of 2064 origins (floor 99.00%); aave-v3-usdc 100.00%, compound-v3-usdc 100.00%, moonwell-usdc 100.00%",
+            "gating": true
+          },
+          {
+            "name": "Regime purity",
+            "passed": true,
+            "detail": "409 of 6192 label windows straddle a regime change (6.61%, tolerance 10%): aave-v3-usdc@1772794800 (aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:50000000000000000:100000000000000000:active -> aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:45000000000000000:100000000000000000:active at 1772881200, inside [origin, origin+H]); aave-v3-usdc@1772798400 (aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:50000000000000000:100000000000000000:active -> aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:45000000000000000:100000000000000000:active at 1772881200, inside [origin, origin+H]); aave-v3-usdc@1772802000 (aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:50000000000000000:100000000000000000:active -> aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:45000000000000000:100000000000000000:active at 1772881200, inside [origin, origin+H])",
+            "gating": true
+          },
+          {
+            "name": "Availability-lag barrier",
+            "passed": true,
+            "detail": "all 6192 labels are readable no earlier than origin + 86400s + 900s lag",
+            "gating": true
+          },
+          {
+            "name": "Registered grid points present",
+            "passed": true,
+            "detail": "swept 36, scorable 36, registered grid 36",
+            "gating": true
+          },
+          {
+            "name": "Selection margin",
+            "passed": true,
+            "detail": "margin 6.4198e-1 against the registered floor 1e-3",
+            "gating": true
+          },
+          {
+            "name": "Artifact reproducibility",
+            "passed": true,
+            "detail": "content hash re-derives from the artifact body: 694cf86f6f7363f2f76a19ce66781ae82311ab1cbd2b7220b3aab94bda8223cf",
+            "gating": true
+          },
+          {
+            "name": "Calibrated artifact",
+            "passed": true,
+            "detail": "artifact is registered, not provisional",
+            "gating": true
+          },
+          {
+            "name": "Artifact completeness (P23)",
+            "passed": true,
+            "detail": "the artifact carries every field the policy reads",
+            "gating": true
+          }
+        ]
+      },
+      "p37": {
+        "pass": true,
+        "blockedReasons": [],
+        "venues": [
+          {
+            "marketId": "aave-v3-usdc",
+            "observations": 1600,
+            "achievedCoverage": 1,
+            "exceedances": 0,
+            "kupiec": {
+              "lr": 32.16107473120464,
+              "pValue": 1
+            },
+            "christoffersen": {
+              "lrCc": 1.447248362904209,
+              "lrInd": 0,
+              "pValue": 0.4849913702741628,
+              "observations": 72
+            }
+          },
+          {
+            "marketId": "compound-v3-usdc",
+            "observations": 2034,
+            "achievedCoverage": 1,
+            "exceedances": 0,
+            "kupiec": {
+              "lr": 40.8847662520439,
+              "pValue": 1
+            },
+            "christoffersen": {
+              "lrCc": 1.7085570950952467,
+              "lrInd": 0,
+              "pValue": 0.42559012338865454,
+              "observations": 85
+            }
+          },
+          {
+            "marketId": "moonwell-usdc",
+            "observations": 1974,
+            "achievedCoverage": 1,
+            "exceedances": 0,
+            "kupiec": {
+              "lr": 39.678725949623725,
+              "pValue": 1
+            },
+            "christoffersen": {
+              "lrCc": 1.6683557516812408,
+              "lrInd": 0,
+              "pValue": 0.43423132679181164,
+              "observations": 83
+            }
+          }
+        ],
+        "checks": [
+          {
+            "name": "Per-venue coverage, P34 domain — aave-v3-usdc",
+            "passed": true,
+            "detail": "achieved 100.00% against target 99.00% (tolerance 1.00pp, floor 98.00%) on 1600 out-of-sample residuals, q=-1.1195e-4; P34 domain: 0 residual(s) excluded, 0 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Kupiec unconditional coverage, one-sided — aave-v3-usdc",
+            "passed": true,
+            "detail": "LR_uc 32.1611, one-sided p 1.0000 >= 0.05 — breach rate 0.00% against expected 1.00%; two-sided p 0.0000 reported, not gated; P34 domain: 0 residual(s) excluded, 0 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Christoffersen independence — aave-v3-usdc",
+            "passed": true,
+            "detail": "LR_ind 0.0000, p 1.0000 >= 0.05 on 72 non-overlapping windows; LR_cc 1.4472 reported, not gated (its unconditional half is the two-sided statistic P37 replaces); P34 domain: 0 residual(s) excluded, 0 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Per-venue coverage, P34 domain — compound-v3-usdc",
+            "passed": true,
+            "detail": "achieved 100.00% against target 99.00% (tolerance 1.00pp, floor 98.00%) on 2034 out-of-sample residuals, q=-5.7725e-5; P34 domain: 0 residual(s) excluded, 0 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Kupiec unconditional coverage, one-sided — compound-v3-usdc",
+            "passed": true,
+            "detail": "LR_uc 40.8848, one-sided p 1.0000 >= 0.05 — breach rate 0.00% against expected 1.00%; two-sided p 0.0000 reported, not gated; P34 domain: 0 residual(s) excluded, 0 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Christoffersen independence — compound-v3-usdc",
+            "passed": true,
+            "detail": "LR_ind 0.0000, p 1.0000 >= 0.05 on 85 non-overlapping windows; LR_cc 1.7086 reported, not gated (its unconditional half is the two-sided statistic P37 replaces); P34 domain: 0 residual(s) excluded, 0 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Per-venue coverage, P34 domain — moonwell-usdc",
+            "passed": true,
+            "detail": "achieved 100.00% against target 99.00% (tolerance 1.00pp, floor 98.00%) on 1974 out-of-sample residuals, q=-8.5493e-5; P34 domain: 0 residual(s) excluded, 0 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Kupiec unconditional coverage, one-sided — moonwell-usdc",
+            "passed": true,
+            "detail": "LR_uc 39.6787, one-sided p 1.0000 >= 0.05 — breach rate 0.00% against expected 1.00%; two-sided p 0.0000 reported, not gated; P34 domain: 0 residual(s) excluded, 0 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Christoffersen independence — moonwell-usdc",
+            "passed": true,
+            "detail": "LR_ind 0.0000, p 1.0000 >= 0.05 on 83 non-overlapping windows; LR_cc 1.6684 reported, not gated (its unconditional half is the two-sided statistic P37 replaces); P34 domain: 0 residual(s) excluded, 0 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Label completeness",
+            "passed": true,
+            "detail": "worst venue aave-v3-usdc at 100.00% of 2064 origins (floor 99.00%); aave-v3-usdc 100.00%, compound-v3-usdc 100.00%, moonwell-usdc 100.00%",
+            "gating": true
+          },
+          {
+            "name": "Regime purity",
+            "passed": true,
+            "detail": "409 of 6192 label windows straddle a regime change (6.61%, tolerance 10%): aave-v3-usdc@1772794800 (aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:50000000000000000:100000000000000000:active -> aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:45000000000000000:100000000000000000:active at 1772881200, inside [origin, origin+H]); aave-v3-usdc@1772798400 (aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:50000000000000000:100000000000000000:active -> aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:45000000000000000:100000000000000000:active at 1772881200, inside [origin, origin+H]); aave-v3-usdc@1772802000 (aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:50000000000000000:100000000000000000:active -> aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:45000000000000000:100000000000000000:active at 1772881200, inside [origin, origin+H])",
+            "gating": true
+          },
+          {
+            "name": "Availability-lag barrier",
+            "passed": true,
+            "detail": "all 6192 labels are readable no earlier than origin + 86400s + 900s lag",
+            "gating": true
+          },
+          {
+            "name": "Registered grid points present",
+            "passed": true,
+            "detail": "swept 36, scorable 36, registered grid 36",
+            "gating": true
+          },
+          {
+            "name": "Selection margin",
+            "passed": true,
+            "detail": "margin 6.4198e-1 against the registered floor 1e-3",
+            "gating": true
+          },
+          {
+            "name": "Artifact reproducibility",
+            "passed": true,
+            "detail": "content hash re-derives from the artifact body: 694cf86f6f7363f2f76a19ce66781ae82311ab1cbd2b7220b3aab94bda8223cf",
+            "gating": true
+          },
+          {
+            "name": "Calibrated artifact",
+            "passed": true,
+            "detail": "artifact is registered, not provisional",
+            "gating": true
+          },
+          {
+            "name": "Artifact completeness (P23)",
+            "passed": true,
+            "detail": "the artifact carries every field the policy reads",
+            "gating": true
+          }
+        ]
+      }
+    },
+    "burned": {
+      "registered": {
+        "pass": false,
+        "blockedReasons": [
+          "Kupiec unconditional coverage — aave-v3-usdc",
+          "Kupiec unconditional coverage — compound-v3-usdc",
+          "Per-venue coverage — moonwell-usdc",
+          "Kupiec unconditional coverage — moonwell-usdc",
+          "Christoffersen conditional coverage — moonwell-usdc"
+        ],
+        "venues": [
+          {
+            "marketId": "aave-v3-usdc",
+            "observations": 1680,
+            "achievedCoverage": 1,
+            "exceedances": 0,
+            "kupiec": {
+              "lr": 33.76912846776487,
+              "pValue": 6.225030491080474e-9
+            },
+            "christoffersen": {
+              "lrCc": 1.5477517214392233,
+              "lrInd": 0,
+              "pValue": 0.46122196741809546,
+              "observations": 77
+            }
+          },
+          {
+            "marketId": "compound-v3-usdc",
+            "observations": 2130,
+            "achievedCoverage": 1,
+            "exceedances": 0,
+            "kupiec": {
+              "lr": 42.81443073591618,
+              "pValue": 6.049072354130658e-11
+            },
+            "christoffersen": {
+              "lrCc": 1.788959781923258,
+              "lrInd": 0,
+              "pValue": 0.40882017442254925,
+              "observations": 89
+            }
+          },
+          {
+            "marketId": "moonwell-usdc",
+            "observations": 2100,
+            "achievedCoverage": 0.9619047619047619,
+            "exceedances": 80,
+            "kupiec": {
+              "lr": 97.69110176251286,
+              "pValue": 0
+            },
+            "christoffersen": {
+              "lrCc": 6.457013040820488,
+              "lrInd": 5.3986302003871,
+              "pValue": 0.03961662124356174,
+              "observations": 88
+            }
+          }
+        ],
+        "checks": [
+          {
+            "name": "Per-venue coverage — aave-v3-usdc",
+            "passed": true,
+            "detail": "achieved 100.00% against target 99.00% (tolerance 1.00pp, floor 98.00%) on 1680 out-of-sample residuals, q=-1.1195e-4",
+            "gating": true
+          },
+          {
+            "name": "Kupiec unconditional coverage — aave-v3-usdc",
+            "passed": false,
+            "detail": "LR_uc 33.7691, p 0.0000 < 0.05 — breach rate 0.00% against expected 1.00%",
+            "gating": true
+          },
+          {
+            "name": "Christoffersen conditional coverage — aave-v3-usdc",
+            "passed": true,
+            "detail": "LR_cc 1.5478 (LR_ind 0.0000), p 0.4612 >= 0.05 on 77 non-overlapping windows",
+            "gating": true
+          },
+          {
+            "name": "Per-venue coverage — compound-v3-usdc",
+            "passed": true,
+            "detail": "achieved 100.00% against target 99.00% (tolerance 1.00pp, floor 98.00%) on 2130 out-of-sample residuals, q=-5.7725e-5",
+            "gating": true
+          },
+          {
+            "name": "Kupiec unconditional coverage — compound-v3-usdc",
+            "passed": false,
+            "detail": "LR_uc 42.8144, p 0.0000 < 0.05 — breach rate 0.00% against expected 1.00%",
+            "gating": true
+          },
+          {
+            "name": "Christoffersen conditional coverage — compound-v3-usdc",
+            "passed": true,
+            "detail": "LR_cc 1.7890 (LR_ind 0.0000), p 0.4088 >= 0.05 on 89 non-overlapping windows",
+            "gating": true
+          },
+          {
+            "name": "Per-venue coverage — moonwell-usdc",
+            "passed": false,
+            "detail": "achieved 96.19% against target 99.00% (tolerance 1.00pp, floor 98.00%) on 2100 out-of-sample residuals, q=-8.5493e-5",
+            "gating": true
+          },
+          {
+            "name": "Kupiec unconditional coverage — moonwell-usdc",
+            "passed": false,
+            "detail": "LR_uc 97.6911, p 0.0000 < 0.05 — breach rate 3.81% against expected 1.00%",
+            "gating": true
+          },
+          {
+            "name": "Christoffersen conditional coverage — moonwell-usdc",
+            "passed": false,
+            "detail": "LR_cc 6.4570 (LR_ind 5.3986), p 0.0396 < 0.05 on 88 non-overlapping windows",
+            "gating": true
+          },
+          {
+            "name": "Label completeness",
+            "passed": true,
+            "detail": "worst venue aave-v3-usdc at 100.00% of 2160 origins (floor 99.00%); aave-v3-usdc 100.00%, compound-v3-usdc 100.00%, moonwell-usdc 100.00%",
+            "gating": true
+          },
+          {
+            "name": "Regime purity",
+            "passed": true,
+            "detail": "390 of 6480 label windows straddle a regime change (6.02%, tolerance 10%): aave-v3-usdc@1780146000 (aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:45000000000000000:100000000000000000:active -> aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:46000000000000000:100000000000000000:active at 1780232400, inside [origin, origin+H]); aave-v3-usdc@1780149600 (aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:45000000000000000:100000000000000000:active -> aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:46000000000000000:100000000000000000:active at 1780232400, inside [origin, origin+H]); aave-v3-usdc@1780153200 (aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:45000000000000000:100000000000000000:active -> aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:46000000000000000:100000000000000000:active at 1780232400, inside [origin, origin+H])",
+            "gating": true
+          },
+          {
+            "name": "Availability-lag barrier",
+            "passed": true,
+            "detail": "all 6480 labels are readable no earlier than origin + 86400s + 900s lag",
+            "gating": true
+          },
+          {
+            "name": "Registered grid points present",
+            "passed": true,
+            "detail": "swept 36, scorable 36, registered grid 36",
+            "gating": true
+          },
+          {
+            "name": "Selection margin",
+            "passed": true,
+            "detail": "margin 6.4198e-1 against the registered floor 1e-3",
+            "gating": true
+          },
+          {
+            "name": "Artifact reproducibility",
+            "passed": true,
+            "detail": "content hash re-derives from the artifact body: 694cf86f6f7363f2f76a19ce66781ae82311ab1cbd2b7220b3aab94bda8223cf",
+            "gating": true
+          },
+          {
+            "name": "Calibrated artifact",
+            "passed": true,
+            "detail": "artifact is registered, not provisional",
+            "gating": true
+          },
+          {
+            "name": "Artifact completeness (P23)",
+            "passed": true,
+            "detail": "the artifact carries every field the policy reads",
+            "gating": true
+          }
+        ]
+      },
+      "p37": {
+        "pass": false,
+        "blockedReasons": [
+          "Per-venue coverage, P34 domain — moonwell-usdc",
+          "Kupiec unconditional coverage, one-sided — moonwell-usdc",
+          "Christoffersen independence — moonwell-usdc"
+        ],
+        "venues": [
+          {
+            "marketId": "aave-v3-usdc",
+            "observations": 1680,
+            "achievedCoverage": 1,
+            "exceedances": 0,
+            "kupiec": {
+              "lr": 33.76912846776487,
+              "pValue": 1
+            },
+            "christoffersen": {
+              "lrCc": 1.5477517214392233,
+              "lrInd": 0,
+              "pValue": 0.46122196741809546,
+              "observations": 77
+            }
+          },
+          {
+            "marketId": "compound-v3-usdc",
+            "observations": 2130,
+            "achievedCoverage": 1,
+            "exceedances": 0,
+            "kupiec": {
+              "lr": 42.81443073591618,
+              "pValue": 1
+            },
+            "christoffersen": {
+              "lrCc": 1.788959781923258,
+              "lrInd": 0,
+              "pValue": 0.40882017442254925,
+              "observations": 89
+            }
+          },
+          {
+            "marketId": "moonwell-usdc",
+            "observations": 2100,
+            "achievedCoverage": 0.9619047619047619,
+            "exceedances": 80,
+            "kupiec": {
+              "lr": 97.69110176251286,
+              "pValue": 0
+            },
+            "christoffersen": {
+              "lrCc": 6.457013040820488,
+              "lrInd": 5.3986302003871,
+              "pValue": 0.03961662124356174,
+              "observations": 88
+            }
+          }
+        ],
+        "checks": [
+          {
+            "name": "Per-venue coverage, P34 domain — aave-v3-usdc",
+            "passed": true,
+            "detail": "achieved 100.00% against target 99.00% (tolerance 1.00pp, floor 98.00%) on 1680 out-of-sample residuals, q=-1.1195e-4; P34 domain: 0 residual(s) excluded, 0 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Kupiec unconditional coverage, one-sided — aave-v3-usdc",
+            "passed": true,
+            "detail": "LR_uc 33.7691, one-sided p 1.0000 >= 0.05 — breach rate 0.00% against expected 1.00%; two-sided p 0.0000 reported, not gated; P34 domain: 0 residual(s) excluded, 0 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Christoffersen independence — aave-v3-usdc",
+            "passed": true,
+            "detail": "LR_ind 0.0000, p 1.0000 >= 0.05 on 77 non-overlapping windows; LR_cc 1.5478 reported, not gated (its unconditional half is the two-sided statistic P37 replaces); P34 domain: 0 residual(s) excluded, 0 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Per-venue coverage, P34 domain — compound-v3-usdc",
+            "passed": true,
+            "detail": "achieved 100.00% against target 99.00% (tolerance 1.00pp, floor 98.00%) on 2130 out-of-sample residuals, q=-5.7725e-5; P34 domain: 0 residual(s) excluded, 0 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Kupiec unconditional coverage, one-sided — compound-v3-usdc",
+            "passed": true,
+            "detail": "LR_uc 42.8144, one-sided p 1.0000 >= 0.05 — breach rate 0.00% against expected 1.00%; two-sided p 0.0000 reported, not gated; P34 domain: 0 residual(s) excluded, 0 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Christoffersen independence — compound-v3-usdc",
+            "passed": true,
+            "detail": "LR_ind 0.0000, p 1.0000 >= 0.05 on 89 non-overlapping windows; LR_cc 1.7890 reported, not gated (its unconditional half is the two-sided statistic P37 replaces); P34 domain: 0 residual(s) excluded, 0 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Per-venue coverage, P34 domain — moonwell-usdc",
+            "passed": false,
+            "detail": "achieved 96.19% against target 99.00% (tolerance 1.00pp, floor 98.00%) on 2100 out-of-sample residuals, q=-8.5493e-5; P34 domain: 0 residual(s) excluded, 0 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Kupiec unconditional coverage, one-sided — moonwell-usdc",
+            "passed": false,
+            "detail": "LR_uc 97.6911, one-sided p 0.0000 < 0.05 — breach rate 3.81% against expected 1.00%; two-sided p 0.0000 reported, not gated; P34 domain: 0 residual(s) excluded, 0 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Christoffersen independence — moonwell-usdc",
+            "passed": false,
+            "detail": "LR_ind 5.3986, p 0.0202 < 0.05 on 88 non-overlapping windows; LR_cc 6.4570 reported, not gated (its unconditional half is the two-sided statistic P37 replaces); P34 domain: 0 residual(s) excluded, 0 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Label completeness",
+            "passed": true,
+            "detail": "worst venue aave-v3-usdc at 100.00% of 2160 origins (floor 99.00%); aave-v3-usdc 100.00%, compound-v3-usdc 100.00%, moonwell-usdc 100.00%",
+            "gating": true
+          },
+          {
+            "name": "Regime purity",
+            "passed": true,
+            "detail": "390 of 6480 label windows straddle a regime change (6.02%, tolerance 10%): aave-v3-usdc@1780146000 (aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:45000000000000000:100000000000000000:active -> aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:46000000000000000:100000000000000000:active at 1780232400, inside [origin, origin+H]); aave-v3-usdc@1780149600 (aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:45000000000000000:100000000000000000:active -> aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:46000000000000000:100000000000000000:active at 1780232400, inside [origin, origin+H]); aave-v3-usdc@1780153200 (aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:45000000000000000:100000000000000000:active -> aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:46000000000000000:100000000000000000:active at 1780232400, inside [origin, origin+H])",
+            "gating": true
+          },
+          {
+            "name": "Availability-lag barrier",
+            "passed": true,
+            "detail": "all 6480 labels are readable no earlier than origin + 86400s + 900s lag",
+            "gating": true
+          },
+          {
+            "name": "Registered grid points present",
+            "passed": true,
+            "detail": "swept 36, scorable 36, registered grid 36",
+            "gating": true
+          },
+          {
+            "name": "Selection margin",
+            "passed": true,
+            "detail": "margin 6.4198e-1 against the registered floor 1e-3",
+            "gating": true
+          },
+          {
+            "name": "Artifact reproducibility",
+            "passed": true,
+            "detail": "content hash re-derives from the artifact body: 694cf86f6f7363f2f76a19ce66781ae82311ab1cbd2b7220b3aab94bda8223cf",
+            "gating": true
+          },
+          {
+            "name": "Calibrated artifact",
+            "passed": true,
+            "detail": "artifact is registered, not provisional",
+            "gating": true
+          },
+          {
+            "name": "Artifact completeness (P23)",
+            "passed": true,
+            "detail": "the artifact carries every field the policy reads",
+            "gating": true
+          }
+        ]
+      }
+    },
+    "heldout-b": {
+      "registered": {
+        "pass": false,
+        "blockedReasons": [
+          "Kupiec unconditional coverage — aave-v3-usdc",
+          "Christoffersen conditional coverage — aave-v3-usdc",
+          "Kupiec unconditional coverage — compound-v3-usdc",
+          "Christoffersen conditional coverage — compound-v3-usdc",
+          "Per-venue coverage — moonwell-usdc",
+          "Kupiec unconditional coverage — moonwell-usdc",
+          "Christoffersen conditional coverage — moonwell-usdc"
+        ],
+        "venues": [
+          {
+            "marketId": "aave-v3-usdc",
+            "observations": 607,
+            "achievedCoverage": 1,
+            "exceedances": 0,
+            "kupiec": {
+              "lr": 12.201107726150761,
+              "pValue": 0.00047770110424494305
+            },
+            "christoffersen": null
+          },
+          {
+            "marketId": "compound-v3-usdc",
+            "observations": 667,
+            "achievedCoverage": 1,
+            "exceedances": 0,
+            "kupiec": {
+              "lr": 13.407148028570935,
+              "pValue": 0.00025073309168011093
+            },
+            "christoffersen": null
+          },
+          {
+            "marketId": "moonwell-usdc",
+            "observations": 637,
+            "achievedCoverage": 0.9638932496075353,
+            "exceedances": 23,
+            "kupiec": {
+              "lr": 26.241605482047646,
+              "pValue": 3.0179706289601427e-7
+            },
+            "christoffersen": null
+          }
+        ],
+        "checks": [
+          {
+            "name": "Per-venue coverage — aave-v3-usdc",
+            "passed": true,
+            "detail": "achieved 100.00% against target 99.00% (tolerance 1.00pp, floor 98.00%) on 607 out-of-sample residuals, q=-1.1195e-4",
+            "gating": true
+          },
+          {
+            "name": "Kupiec unconditional coverage — aave-v3-usdc",
+            "passed": false,
+            "detail": "LR_uc 12.2011, p 0.0005 < 0.05 — breach rate 0.00% against expected 1.00%",
+            "gating": true
+          },
+          {
+            "name": "Christoffersen conditional coverage — aave-v3-usdc",
+            "passed": null,
+            "detail": "NOT PRODUCED: thinning 607 overlapping residuals to non-overlapping H=86400s windows left 26 < 30 observations",
+            "gating": true
+          },
+          {
+            "name": "Per-venue coverage — compound-v3-usdc",
+            "passed": true,
+            "detail": "achieved 100.00% against target 99.00% (tolerance 1.00pp, floor 98.00%) on 667 out-of-sample residuals, q=-5.7725e-5",
+            "gating": true
+          },
+          {
+            "name": "Kupiec unconditional coverage — compound-v3-usdc",
+            "passed": false,
+            "detail": "LR_uc 13.4071, p 0.0003 < 0.05 — breach rate 0.00% against expected 1.00%",
+            "gating": true
+          },
+          {
+            "name": "Christoffersen conditional coverage — compound-v3-usdc",
+            "passed": null,
+            "detail": "NOT PRODUCED: thinning 667 overlapping residuals to non-overlapping H=86400s windows left 28 < 30 observations",
+            "gating": true
+          },
+          {
+            "name": "Per-venue coverage — moonwell-usdc",
+            "passed": false,
+            "detail": "achieved 96.39% against target 99.00% (tolerance 1.00pp, floor 98.00%) on 637 out-of-sample residuals, q=-8.5493e-5",
+            "gating": true
+          },
+          {
+            "name": "Kupiec unconditional coverage — moonwell-usdc",
+            "passed": false,
+            "detail": "LR_uc 26.2416, p 0.0000 < 0.05 — breach rate 3.61% against expected 1.00%",
+            "gating": true
+          },
+          {
+            "name": "Christoffersen conditional coverage — moonwell-usdc",
+            "passed": null,
+            "detail": "NOT PRODUCED: thinning 637 overlapping residuals to non-overlapping H=86400s windows left 27 < 30 observations",
+            "gating": true
+          },
+          {
+            "name": "Label completeness",
+            "passed": true,
+            "detail": "worst venue aave-v3-usdc at 100.00% of 697 origins (floor 99.00%); aave-v3-usdc 100.00%, compound-v3-usdc 100.00%, moonwell-usdc 100.00%",
+            "gating": true
+          },
+          {
+            "name": "Regime purity",
+            "passed": true,
+            "detail": "72 of 2091 label windows straddle a regime change (3.44%, tolerance 10%): aave-v3-usdc@1787846400 (aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:45000000000000000:100000000000000000:active -> aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:46000000000000000:100000000000000000:active at 1787932800, inside [origin, origin+H]); aave-v3-usdc@1787850000 (aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:45000000000000000:100000000000000000:active -> aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:46000000000000000:100000000000000000:active at 1787932800, inside [origin, origin+H]); aave-v3-usdc@1787853600 (aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:45000000000000000:100000000000000000:active -> aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:46000000000000000:100000000000000000:active at 1787932800, inside [origin, origin+H])",
+            "gating": true
+          },
+          {
+            "name": "Availability-lag barrier",
+            "passed": true,
+            "detail": "all 2091 labels are readable no earlier than origin + 86400s + 900s lag",
+            "gating": true
+          },
+          {
+            "name": "Registered grid points present",
+            "passed": true,
+            "detail": "swept 36, scorable 36, registered grid 36",
+            "gating": true
+          },
+          {
+            "name": "Selection margin",
+            "passed": true,
+            "detail": "margin 6.4198e-1 against the registered floor 1e-3",
+            "gating": true
+          },
+          {
+            "name": "Artifact reproducibility",
+            "passed": true,
+            "detail": "content hash re-derives from the artifact body: 694cf86f6f7363f2f76a19ce66781ae82311ab1cbd2b7220b3aab94bda8223cf",
+            "gating": true
+          },
+          {
+            "name": "Calibrated artifact",
+            "passed": true,
+            "detail": "artifact is registered, not provisional",
+            "gating": true
+          },
+          {
+            "name": "Artifact completeness (P23)",
+            "passed": true,
+            "detail": "the artifact carries every field the policy reads",
+            "gating": true
+          }
+        ]
+      },
+      "p37": {
+        "pass": false,
+        "blockedReasons": [
+          "Christoffersen independence — aave-v3-usdc",
+          "Christoffersen independence — compound-v3-usdc",
+          "Christoffersen independence — moonwell-usdc"
+        ],
+        "venues": [
+          {
+            "marketId": "aave-v3-usdc",
+            "observations": 607,
+            "achievedCoverage": 1,
+            "exceedances": 0,
+            "kupiec": {
+              "lr": 12.201107726150761,
+              "pValue": 1
+            },
+            "christoffersen": null
+          },
+          {
+            "marketId": "compound-v3-usdc",
+            "observations": 667,
+            "achievedCoverage": 1,
+            "exceedances": 0,
+            "kupiec": {
+              "lr": 13.407148028570935,
+              "pValue": 1
+            },
+            "christoffersen": null
+          },
+          {
+            "marketId": "moonwell-usdc",
+            "observations": 31,
+            "achievedCoverage": 1,
+            "exceedances": 0,
+            "kupiec": {
+              "lr": 0.6231208229170899,
+              "pValue": 1
+            },
+            "christoffersen": null
+          }
+        ],
+        "checks": [
+          {
+            "name": "Per-venue coverage, P34 domain — aave-v3-usdc",
+            "passed": true,
+            "detail": "achieved 100.00% against target 99.00% (tolerance 1.00pp, floor 98.00%) on 607 out-of-sample residuals, q=-1.1195e-4; P34 domain: 0 residual(s) excluded, 0 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Kupiec unconditional coverage, one-sided — aave-v3-usdc",
+            "passed": true,
+            "detail": "LR_uc 12.2011, one-sided p 1.0000 >= 0.05 — breach rate 0.00% against expected 1.00%; two-sided p 0.0005 reported, not gated; P34 domain: 0 residual(s) excluded, 0 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Christoffersen independence — aave-v3-usdc",
+            "passed": null,
+            "detail": "NOT PRODUCED: thinning 607 overlapping residuals to non-overlapping H=86400s windows left 26 < 30 observations; P34 domain: 0 residual(s) excluded, 0 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Per-venue coverage, P34 domain — compound-v3-usdc",
+            "passed": true,
+            "detail": "achieved 100.00% against target 99.00% (tolerance 1.00pp, floor 98.00%) on 667 out-of-sample residuals, q=-5.7725e-5; P34 domain: 0 residual(s) excluded, 0 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Kupiec unconditional coverage, one-sided — compound-v3-usdc",
+            "passed": true,
+            "detail": "LR_uc 13.4071, one-sided p 1.0000 >= 0.05 — breach rate 0.00% against expected 1.00%; two-sided p 0.0003 reported, not gated; P34 domain: 0 residual(s) excluded, 0 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Christoffersen independence — compound-v3-usdc",
+            "passed": null,
+            "detail": "NOT PRODUCED: thinning 667 overlapping residuals to non-overlapping H=86400s windows left 28 < 30 observations; P34 domain: 0 residual(s) excluded, 0 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Per-venue coverage, P34 domain — moonwell-usdc",
+            "passed": true,
+            "detail": "achieved 100.00% against target 99.00% (tolerance 1.00pp, floor 98.00%) on 31 out-of-sample residuals, q=-8.5493e-5; P34 domain: 606 residual(s) excluded, 23 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Kupiec unconditional coverage, one-sided — moonwell-usdc",
+            "passed": true,
+            "detail": "LR_uc 0.6231, one-sided p 1.0000 >= 0.05 — breach rate 0.00% against expected 1.00%; two-sided p 0.4299 reported, not gated; P34 domain: 606 residual(s) excluded, 23 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Christoffersen independence — moonwell-usdc",
+            "passed": null,
+            "detail": "NOT PRODUCED: thinning 31 overlapping residuals to non-overlapping H=86400s windows left 2 < 30 observations; P34 domain: 606 residual(s) excluded, 23 of them breaches",
+            "gating": true
+          },
+          {
+            "name": "Label completeness",
+            "passed": true,
+            "detail": "worst venue aave-v3-usdc at 100.00% of 697 origins (floor 99.00%); aave-v3-usdc 100.00%, compound-v3-usdc 100.00%, moonwell-usdc 100.00%",
+            "gating": true
+          },
+          {
+            "name": "Regime purity",
+            "passed": true,
+            "detail": "72 of 2091 label windows straddle a regime change (3.44%, tolerance 10%): aave-v3-usdc@1787846400 (aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:45000000000000000:100000000000000000:active -> aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:46000000000000000:100000000000000000:active at 1787932800, inside [origin, origin+H]); aave-v3-usdc@1787850000 (aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:45000000000000000:100000000000000000:active -> aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:46000000000000000:100000000000000000:active at 1787932800, inside [origin, origin+H]); aave-v3-usdc@1787853600 (aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:45000000000000000:100000000000000000:active -> aave:0xa238dd80c259a72e81d7e4664a9801593f98d1c5|0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5:0:900000000000000000000000000:46000000000000000:100000000000000000:active at 1787932800, inside [origin, origin+H])",
+            "gating": true
+          },
+          {
+            "name": "Availability-lag barrier",
+            "passed": true,
+            "detail": "all 2091 labels are readable no earlier than origin + 86400s + 900s lag",
+            "gating": true
+          },
+          {
+            "name": "Registered grid points present",
+            "passed": true,
+            "detail": "swept 36, scorable 36, registered grid 36",
+            "gating": true
+          },
+          {
+            "name": "Selection margin",
+            "passed": true,
+            "detail": "margin 6.4198e-1 against the registered floor 1e-3",
+            "gating": true
+          },
+          {
+            "name": "Artifact reproducibility",
+            "passed": true,
+            "detail": "content hash re-derives from the artifact body: 694cf86f6f7363f2f76a19ce66781ae82311ab1cbd2b7220b3aab94bda8223cf",
+            "gating": true
+          },
+          {
+            "name": "Calibrated artifact",
+            "passed": true,
+            "detail": "artifact is registered, not provisional",
+            "gating": true
+          },
+          {
+            "name": "Artifact completeness (P23)",
+            "passed": true,
+            "detail": "the artifact carries every field the policy reads",
+            "gating": true
+          }
+        ]
+      }
+    }
+  }
+}

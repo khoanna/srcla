@@ -1,0 +1,259 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 618" width="900" height="618" font-family="'Noto Sans', 'Helvetica Neue', Arial, 'Liberation Sans', sans-serif" role="img">
+<title>Realized net APY by vault size</title>
+<rect x="0" y="0" width="900" height="618" fill="#ffffff"/>
+<text data-role="title" x="24" y="34" font-size="18" font-weight="600" fill="#0b0b0b">Realized net APY by vault size</text>
+<text data-role="subtitle" x="24" y="56" font-size="13" fill="#52514e">Sealed era heldout-b · 20 vault sizes · every origin · large markers at the 4 registered tiers · non-gating</text>
+<rect x="24" y="70" width="852" height="50" rx="4" fill="#fff6e0"/>
+<rect x="24" y="70" width="4" height="50" fill="#fab219"/>
+<path d="M44,86.0 L54,103.0 L34,103.0 Z" fill="#fab219" stroke="#0b0b0b" stroke-width="1" stroke-linejoin="round"/>
+<text x="44" y="101.0" font-size="11" font-weight="700" text-anchor="middle" fill="#0b0b0b">!</text>
+<text data-role="warning-line" x="64" y="90" font-size="12.5" fill="#0b0b0b">WARNING: moonwell-usdc held ZERO withdrawable cash for 34% of this era (peak 90% APY, unwithdrawable).</text>
+<text data-role="warning-line" x="64" y="108" font-size="12.5" fill="#0b0b0b">Returns below are annualized from 21 days and are NOT attainable yield.</text>
+<line x1="24.0" y1="142" x2="48.0" y2="142" stroke="#2a78d6" stroke-width="3" stroke-linecap="round"/>
+<circle data-role="legend-marker" cx="36.0" cy="142.0" r="5" fill="#2a78d6" stroke="#ffffff" stroke-width="1.5"/>
+<text data-role="legend-label" x="58.0" y="146" font-size="12" font-weight="600" fill="#0b0b0b">SRCLA (proposed)</text>
+<line x1="308.0" y1="142" x2="332.0" y2="142" stroke="#3d3c39" stroke-width="1.75" stroke-linecap="round" stroke-dasharray="2 4"/>
+<rect data-role="legend-marker" x="316.4" y="138.4" width="7.2" height="7.2" fill="#ffffff" stroke="#3d3c39" stroke-width="2"/>
+<text data-role="legend-label" x="342.0" y="146" font-size="12" fill="#0b0b0b">B0 · idle USDC</text>
+<line x1="592.0" y1="142" x2="616.0" y2="142" stroke="#eb6834" stroke-width="2" stroke-linecap="round"/>
+<rect data-role="legend-marker" x="600.2" y="138.2" width="7.6" height="7.6" rx="1" fill="#eb6834" stroke="#ffffff" stroke-width="1.5"/>
+<text data-role="legend-label" x="626.0" y="146" font-size="12" fill="#0b0b0b">B1 · highest displayed rate</text>
+<line x1="24.0" y1="164" x2="48.0" y2="164" stroke="#1baf7a" stroke-width="2" stroke-linecap="round"/>
+<path data-role="legend-marker" d="M36.0,158.8 L40.5,167.4 L31.5,167.4 Z" fill="#1baf7a" stroke="#ffffff" stroke-width="1.5"/>
+<text data-role="legend-label" x="58.0" y="168" font-size="12" fill="#0b0b0b">B2 · capacity-aware, no uncertainty</text>
+<line x1="308.0" y1="164" x2="332.0" y2="164" stroke="#8a8883" stroke-width="1.75" stroke-linecap="round" stroke-dasharray="6 4"/>
+<circle data-role="legend-marker" cx="320.0" cy="164.0" r="4" fill="#ffffff" stroke="#8a8883" stroke-width="2"/>
+<text data-role="legend-label" x="342.0" y="168" font-size="12" fill="#0b0b0b">B2u · B2, no reserve (diagnostic)</text>
+<line x1="592.0" y1="164" x2="616.0" y2="164" stroke="#eda100" stroke-width="2" stroke-linecap="round"/>
+<path data-role="legend-marker" d="M604.0,158.6 L609.4,164.0 L604.0,169.4 L598.6,164.0 Z" fill="#eda100" stroke="#ffffff" stroke-width="1.5"/>
+<text data-role="legend-label" x="626.0" y="168" font-size="12" fill="#0b0b0b">B3 · B2 + movement-cost threshold</text>
+<line x1="24.0" y1="186" x2="48.0" y2="186" stroke="#e87ba4" stroke-width="2" stroke-linecap="round"/>
+<path data-role="legend-marker" d="M36.0,191.2 L40.5,182.6 L31.5,182.6 Z" fill="#e87ba4" stroke="#ffffff" stroke-width="1.5"/>
+<text data-role="legend-label" x="58.0" y="190" font-size="12" fill="#0b0b0b">B4 · frozen robust allocation</text>
+<line x1="308.0" y1="186" x2="332.0" y2="186" stroke="#7b5cd6" stroke-width="1.75" stroke-linecap="round" stroke-dasharray="8 3 2 3"/>
+<path data-role="legend-marker" d="M320.0,181.1 L324.9,186.0 L320.0,190.9 L315.1,186.0 Z" fill="#ffffff" stroke="#7b5cd6" stroke-width="2"/>
+<text data-role="legend-label" x="342.0" y="190" font-size="12" fill="#0b0b0b">B5 · bounded hindsight (diagnostic)</text>
+<rect data-role="plot-area" x="76" y="210" width="796" height="320" fill="none"/>
+<line x1="76" y1="530.0" x2="872" y2="530.0" stroke="#a8a79f" stroke-width="1"/>
+<text data-role="y-tick-label" x="66" y="534.0" font-size="12" text-anchor="end" fill="#52514e">0%</text>
+<line x1="76" y1="426.7" x2="872" y2="426.7" stroke="#e7e6e1" stroke-width="1"/>
+<text data-role="y-tick-label" x="66" y="430.7" font-size="12" text-anchor="end" fill="#52514e">10%</text>
+<line x1="76" y1="323.3" x2="872" y2="323.3" stroke="#e7e6e1" stroke-width="1"/>
+<text data-role="y-tick-label" x="66" y="327.3" font-size="12" text-anchor="end" fill="#52514e">20%</text>
+<line x1="76" y1="220.0" x2="872" y2="220.0" stroke="#e7e6e1" stroke-width="1"/>
+<text data-role="y-tick-label" x="66" y="224.0" font-size="12" text-anchor="end" fill="#52514e">30%</text>
+<line x1="76.0" y1="210" x2="76.0" y2="530" stroke="#e7e6e1" stroke-width="1"/>
+<line x1="341.3" y1="210" x2="341.3" y2="530" stroke="#e7e6e1" stroke-width="1"/>
+<line x1="606.7" y1="210" x2="606.7" y2="530" stroke="#e7e6e1" stroke-width="1"/>
+<line x1="872.0" y1="210" x2="872.0" y2="530" stroke="#e7e6e1" stroke-width="1"/>
+<line x1="76.0" y1="530" x2="76.0" y2="536" stroke="#a8a79f" stroke-width="1"/>
+<text data-role="x-tick-label" x="76.0" y="544" font-size="11" text-anchor="end" fill="#52514e" transform="rotate(-45 76.0 544)">$10k</text>
+<line x1="122.7" y1="530" x2="122.7" y2="536" stroke="#a8a79f" stroke-width="1"/>
+<text data-role="x-tick-label" x="122.7" y="544" font-size="11" text-anchor="end" fill="#52514e" transform="rotate(-45 122.7 544)">$15k</text>
+<line x1="181.6" y1="530" x2="181.6" y2="536" stroke="#a8a79f" stroke-width="1"/>
+<text data-role="x-tick-label" x="181.6" y="544" font-size="11" text-anchor="end" fill="#52514e" transform="rotate(-45 181.6 544)">$25k</text>
+<line x1="261.5" y1="530" x2="261.5" y2="536" stroke="#a8a79f" stroke-width="1"/>
+<text data-role="x-tick-label" x="261.5" y="544" font-size="11" text-anchor="end" fill="#52514e" transform="rotate(-45 261.5 544)">$50k</text>
+<line x1="308.2" y1="530" x2="308.2" y2="536" stroke="#a8a79f" stroke-width="1"/>
+<text data-role="x-tick-label" x="308.2" y="544" font-size="11" text-anchor="end" fill="#52514e" transform="rotate(-45 308.2 544)">$75k</text>
+<line x1="341.3" y1="530" x2="341.3" y2="536" stroke="#a8a79f" stroke-width="1"/>
+<text data-role="x-tick-label" x="341.3" y="544" font-size="11" text-anchor="end" fill="#52514e" transform="rotate(-45 341.3 544)">$100k</text>
+<line x1="388.1" y1="530" x2="388.1" y2="536" stroke="#a8a79f" stroke-width="1"/>
+<text data-role="x-tick-label" x="388.1" y="544" font-size="11" text-anchor="end" fill="#52514e" transform="rotate(-45 388.1 544)">$150k</text>
+<line x1="446.9" y1="530" x2="446.9" y2="536" stroke="#a8a79f" stroke-width="1"/>
+<text data-role="x-tick-label" x="446.9" y="544" font-size="11" text-anchor="end" fill="#52514e" transform="rotate(-45 446.9 544)">$250k</text>
+<line x1="526.8" y1="530" x2="526.8" y2="536" stroke="#a8a79f" stroke-width="1"/>
+<text data-role="x-tick-label" x="526.8" y="544" font-size="11" text-anchor="end" fill="#52514e" transform="rotate(-45 526.8 544)">$500k</text>
+<line x1="573.5" y1="530" x2="573.5" y2="536" stroke="#a8a79f" stroke-width="1"/>
+<text data-role="x-tick-label" x="573.5" y="544" font-size="11" text-anchor="end" fill="#52514e" transform="rotate(-45 573.5 544)">$750k</text>
+<line x1="606.7" y1="530" x2="606.7" y2="536" stroke="#a8a79f" stroke-width="1"/>
+<text data-role="x-tick-label" x="606.7" y="544" font-size="11" text-anchor="end" fill="#52514e" transform="rotate(-45 606.7 544)">$1M</text>
+<line x1="653.4" y1="530" x2="653.4" y2="536" stroke="#a8a79f" stroke-width="1"/>
+<text data-role="x-tick-label" x="653.4" y="544" font-size="11" text-anchor="end" fill="#52514e" transform="rotate(-45 653.4 544)">$1.5M</text>
+<line x1="686.5" y1="530" x2="686.5" y2="536" stroke="#a8a79f" stroke-width="1"/>
+<text data-role="x-tick-label" x="686.5" y="544" font-size="11" text-anchor="end" fill="#52514e" transform="rotate(-45 686.5 544)">$2M</text>
+<line x1="712.3" y1="530" x2="712.3" y2="536" stroke="#a8a79f" stroke-width="1"/>
+<text data-role="x-tick-label" x="712.3" y="544" font-size="11" text-anchor="end" fill="#52514e" transform="rotate(-45 712.3 544)">$2.5M</text>
+<line x1="733.3" y1="530" x2="733.3" y2="536" stroke="#a8a79f" stroke-width="1"/>
+<text data-role="x-tick-label" x="733.3" y="544" font-size="11" text-anchor="end" fill="#52514e" transform="rotate(-45 733.3 544)">$3M</text>
+<line x1="766.4" y1="530" x2="766.4" y2="536" stroke="#a8a79f" stroke-width="1"/>
+<text data-role="x-tick-label" x="766.4" y="544" font-size="11" text-anchor="end" fill="#52514e" transform="rotate(-45 766.4 544)">$4M</text>
+<line x1="792.1" y1="530" x2="792.1" y2="536" stroke="#a8a79f" stroke-width="1"/>
+<text data-role="x-tick-label" x="792.1" y="544" font-size="11" text-anchor="end" fill="#52514e" transform="rotate(-45 792.1 544)">$5M</text>
+<line x1="822.4" y1="530" x2="822.4" y2="536" stroke="#a8a79f" stroke-width="1"/>
+<text data-role="x-tick-label" x="822.4" y="544" font-size="11" text-anchor="end" fill="#52514e" transform="rotate(-45 822.4 544)">$6.5M</text>
+<line x1="846.3" y1="530" x2="846.3" y2="536" stroke="#a8a79f" stroke-width="1"/>
+<text data-role="x-tick-label" x="846.3" y="544" font-size="11" text-anchor="end" fill="#52514e" transform="rotate(-45 846.3 544)">$8M</text>
+<line x1="872.0" y1="530" x2="872.0" y2="536" stroke="#a8a79f" stroke-width="1"/>
+<text data-role="x-tick-label" x="872.0" y="544" font-size="11" text-anchor="end" fill="#52514e" transform="rotate(-45 872.0 544)">$10M</text>
+<text x="474" y="604" font-size="13" text-anchor="middle" fill="#52514e">Vault size (USDC, log scale)</text>
+<text x="22" y="370.0" font-size="13" text-anchor="middle" fill="#52514e" transform="rotate(-90 22 370.0)">Realized net APY (%)</text>
+<path data-role="series" data-policy="b0" d="M76.0,530.0 L122.7,530.0 L181.6,530.0 L261.5,530.0 L308.2,530.0 L341.3,530.0 L388.1,530.0 L446.9,530.0 L526.8,530.0 L573.5,530.0 L606.7,530.0 L653.4,530.0 L686.5,530.0 L712.3,530.0 L733.3,530.0 L766.4,530.0 L792.1,530.0 L822.4,530.0 L846.3,530.0 L872.0,530.0" fill="none" stroke="#3d3c39" stroke-width="1.75" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="2 4"/>
+<path data-role="series" data-policy="b1" d="M76.0,437.6 L122.7,432.4 L181.6,437.4 L261.5,437.4 L308.2,428.0 L341.3,437.4 L388.1,432.3 L446.9,437.3 L526.8,437.3 L573.5,427.8 L606.7,437.3 L653.4,432.2 L686.5,450.8 L712.3,448.3 L733.3,472.8 L766.4,461.5 L792.1,450.9 L822.4,458.2 L846.3,457.3 L872.0,460.9" fill="none" stroke="#eb6834" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path data-role="series" data-policy="b2" d="M76.0,461.1 L122.7,461.4 L181.6,461.0 L261.5,460.9 L308.2,458.1 L341.3,460.9 L388.1,461.2 L446.9,448.5 L526.8,448.6 L573.5,457.4 L606.7,448.4 L653.4,448.4 L686.5,487.7 L712.3,481.1 L733.3,492.0 L766.4,493.7 L792.1,472.6 L822.4,485.2 L846.3,486.4 L872.0,492.2" fill="none" stroke="#1baf7a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path data-role="series" data-policy="b2u" d="M76.0,456.2 L122.7,456.2 L181.6,456.1 L261.5,456.1 L308.2,461.0 L341.3,456.1 L388.1,456.1 L446.9,443.6 L526.8,443.7 L573.5,455.2 L606.7,444.0 L653.4,460.4 L686.5,481.3 L712.3,482.8 L733.3,483.7 L766.4,485.2 L792.1,465.6 L822.4,471.4 L846.3,497.4 L872.0,495.8" fill="none" stroke="#8a8883" stroke-width="1.75" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4"/>
+<path data-role="series" data-policy="b3" d="M76.0,228.2 L122.7,229.6 L181.6,228.1 L261.5,228.1 L308.2,239.7 L341.3,228.1 L388.1,229.6 L446.9,228.1 L526.8,234.8 L573.5,250.5 L606.7,240.9 L653.4,241.5 L686.5,264.8 L712.3,307.3 L733.3,344.1 L766.4,371.1 L792.1,389.5 L822.4,426.0 L846.3,430.7 L872.0,447.0" fill="none" stroke="#eda100" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path data-role="series" data-policy="b4" d="M76.0,325.1 L122.7,325.1 L181.6,325.1 L261.5,325.1 L308.2,325.1 L341.3,325.1 L388.1,325.1 L446.9,325.1 L526.8,325.1 L573.5,325.1 L606.7,325.1 L653.4,325.1 L686.5,325.1 L712.3,325.1 L733.3,325.1 L766.4,325.1 L792.1,325.1 L822.4,325.1 L846.3,325.1 L872.0,325.1" fill="none" stroke="#e87ba4" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path data-role="series" data-policy="b5" d="M76.0,224.6 L122.7,222.8 L181.6,224.6 L261.5,224.5 L308.2,235.1 L341.3,224.5 L388.1,222.7 L446.9,224.5 L526.8,222.4 L573.5,235.3 L606.7,223.8 L653.4,222.1 L686.5,243.5 L712.3,295.7 L733.3,360.1 L766.4,358.8 L792.1,390.3 L822.4,382.5 L846.3,407.6 L872.0,411.5" fill="none" stroke="#7b5cd6" stroke-width="1.75" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="8 3 2 3"/>
+<path data-role="series" data-policy="srcla" d="M76.0,225.9 L122.7,224.9 L181.6,225.8 L261.5,225.8 L308.2,237.3 L341.3,225.8 L388.1,226.0 L446.9,248.3 L526.8,272.1 L573.5,268.9 L606.7,271.7 L653.4,322.2 L686.5,339.8 L712.3,330.0 L733.3,345.2 L766.4,384.1 L792.1,424.1 L822.4,430.9 L846.3,448.9 L872.0,476.1" fill="none" stroke="#2a78d6" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<rect data-role="marker" data-policy="b0" x="72.4" y="526.4" width="7.2" height="7.2" fill="#ffffff" stroke="#3d3c39" stroke-width="2"/>
+<rect data-role="marker" data-policy="b0" x="120.5" y="527.8" width="4.4" height="4.4" fill="#ffffff" stroke="#3d3c39" stroke-width="2"/>
+<rect data-role="marker" data-policy="b0" x="179.4" y="527.8" width="4.4" height="4.4" fill="#ffffff" stroke="#3d3c39" stroke-width="2"/>
+<rect data-role="marker" data-policy="b0" x="259.3" y="527.8" width="4.4" height="4.4" fill="#ffffff" stroke="#3d3c39" stroke-width="2"/>
+<rect data-role="marker" data-policy="b0" x="306.0" y="527.8" width="4.4" height="4.4" fill="#ffffff" stroke="#3d3c39" stroke-width="2"/>
+<rect data-role="marker" data-policy="b0" x="337.7" y="526.4" width="7.2" height="7.2" fill="#ffffff" stroke="#3d3c39" stroke-width="2"/>
+<rect data-role="marker" data-policy="b0" x="385.9" y="527.8" width="4.4" height="4.4" fill="#ffffff" stroke="#3d3c39" stroke-width="2"/>
+<rect data-role="marker" data-policy="b0" x="444.7" y="527.8" width="4.4" height="4.4" fill="#ffffff" stroke="#3d3c39" stroke-width="2"/>
+<rect data-role="marker" data-policy="b0" x="524.6" y="527.8" width="4.4" height="4.4" fill="#ffffff" stroke="#3d3c39" stroke-width="2"/>
+<rect data-role="marker" data-policy="b0" x="571.3" y="527.8" width="4.4" height="4.4" fill="#ffffff" stroke="#3d3c39" stroke-width="2"/>
+<rect data-role="marker" data-policy="b0" x="603.1" y="526.4" width="7.2" height="7.2" fill="#ffffff" stroke="#3d3c39" stroke-width="2"/>
+<rect data-role="marker" data-policy="b0" x="651.2" y="527.8" width="4.4" height="4.4" fill="#ffffff" stroke="#3d3c39" stroke-width="2"/>
+<rect data-role="marker" data-policy="b0" x="684.3" y="527.8" width="4.4" height="4.4" fill="#ffffff" stroke="#3d3c39" stroke-width="2"/>
+<rect data-role="marker" data-policy="b0" x="710.1" y="527.8" width="4.4" height="4.4" fill="#ffffff" stroke="#3d3c39" stroke-width="2"/>
+<rect data-role="marker" data-policy="b0" x="731.1" y="527.8" width="4.4" height="4.4" fill="#ffffff" stroke="#3d3c39" stroke-width="2"/>
+<rect data-role="marker" data-policy="b0" x="764.2" y="527.8" width="4.4" height="4.4" fill="#ffffff" stroke="#3d3c39" stroke-width="2"/>
+<rect data-role="marker" data-policy="b0" x="789.9" y="527.8" width="4.4" height="4.4" fill="#ffffff" stroke="#3d3c39" stroke-width="2"/>
+<rect data-role="marker" data-policy="b0" x="820.2" y="527.8" width="4.4" height="4.4" fill="#ffffff" stroke="#3d3c39" stroke-width="2"/>
+<rect data-role="marker" data-policy="b0" x="844.1" y="527.8" width="4.4" height="4.4" fill="#ffffff" stroke="#3d3c39" stroke-width="2"/>
+<rect data-role="marker" data-policy="b0" x="868.4" y="526.4" width="7.2" height="7.2" fill="#ffffff" stroke="#3d3c39" stroke-width="2"/>
+<rect data-role="marker" data-policy="b1" x="72.2" y="433.8" width="7.6" height="7.6" rx="1" fill="#eb6834" stroke="#ffffff" stroke-width="1.5"/>
+<rect data-role="marker" data-policy="b1" x="120.4" y="430.1" width="4.7" height="4.7" rx="1" fill="#eb6834" stroke="#ffffff" stroke-width="1.5"/>
+<rect data-role="marker" data-policy="b1" x="179.2" y="435.1" width="4.7" height="4.7" rx="1" fill="#eb6834" stroke="#ffffff" stroke-width="1.5"/>
+<rect data-role="marker" data-policy="b1" x="259.1" y="435.1" width="4.7" height="4.7" rx="1" fill="#eb6834" stroke="#ffffff" stroke-width="1.5"/>
+<rect data-role="marker" data-policy="b1" x="305.8" y="425.7" width="4.7" height="4.7" rx="1" fill="#eb6834" stroke="#ffffff" stroke-width="1.5"/>
+<rect data-role="marker" data-policy="b1" x="337.5" y="433.5" width="7.6" height="7.6" rx="1" fill="#eb6834" stroke="#ffffff" stroke-width="1.5"/>
+<rect data-role="marker" data-policy="b1" x="385.7" y="429.9" width="4.7" height="4.7" rx="1" fill="#eb6834" stroke="#ffffff" stroke-width="1.5"/>
+<rect data-role="marker" data-policy="b1" x="444.6" y="435.0" width="4.7" height="4.7" rx="1" fill="#eb6834" stroke="#ffffff" stroke-width="1.5"/>
+<rect data-role="marker" data-policy="b1" x="524.5" y="435.0" width="4.7" height="4.7" rx="1" fill="#eb6834" stroke="#ffffff" stroke-width="1.5"/>
+<rect data-role="marker" data-policy="b1" x="571.2" y="425.5" width="4.7" height="4.7" rx="1" fill="#eb6834" stroke="#ffffff" stroke-width="1.5"/>
+<rect data-role="marker" data-policy="b1" x="602.8" y="433.5" width="7.6" height="7.6" rx="1" fill="#eb6834" stroke="#ffffff" stroke-width="1.5"/>
+<rect data-role="marker" data-policy="b1" x="651.1" y="429.9" width="4.7" height="4.7" rx="1" fill="#eb6834" stroke="#ffffff" stroke-width="1.5"/>
+<rect data-role="marker" data-policy="b1" x="684.2" y="448.5" width="4.7" height="4.7" rx="1" fill="#eb6834" stroke="#ffffff" stroke-width="1.5"/>
+<rect data-role="marker" data-policy="b1" x="709.9" y="445.9" width="4.7" height="4.7" rx="1" fill="#eb6834" stroke="#ffffff" stroke-width="1.5"/>
+<rect data-role="marker" data-policy="b1" x="730.9" y="470.5" width="4.7" height="4.7" rx="1" fill="#eb6834" stroke="#ffffff" stroke-width="1.5"/>
+<rect data-role="marker" data-policy="b1" x="764.1" y="459.2" width="4.7" height="4.7" rx="1" fill="#eb6834" stroke="#ffffff" stroke-width="1.5"/>
+<rect data-role="marker" data-policy="b1" x="789.8" y="448.6" width="4.7" height="4.7" rx="1" fill="#eb6834" stroke="#ffffff" stroke-width="1.5"/>
+<rect data-role="marker" data-policy="b1" x="820.0" y="455.9" width="4.7" height="4.7" rx="1" fill="#eb6834" stroke="#ffffff" stroke-width="1.5"/>
+<rect data-role="marker" data-policy="b1" x="843.9" y="455.0" width="4.7" height="4.7" rx="1" fill="#eb6834" stroke="#ffffff" stroke-width="1.5"/>
+<rect data-role="marker" data-policy="b1" x="868.2" y="457.1" width="7.6" height="7.6" rx="1" fill="#eb6834" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b2" d="M76.0,455.9 L80.5,464.5 L71.5,464.5 Z" fill="#1baf7a" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b2" d="M122.7,458.2 L125.5,463.4 L120.0,463.4 Z" fill="#1baf7a" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b2" d="M181.6,457.8 L184.3,463.0 L178.8,463.0 Z" fill="#1baf7a" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b2" d="M261.5,457.8 L264.2,463.0 L258.7,463.0 Z" fill="#1baf7a" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b2" d="M308.2,455.0 L310.9,460.2 L305.4,460.2 Z" fill="#1baf7a" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b2" d="M341.3,455.8 L345.8,464.3 L336.8,464.3 Z" fill="#1baf7a" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b2" d="M388.1,458.1 L390.8,463.3 L385.3,463.3 Z" fill="#1baf7a" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b2" d="M446.9,445.3 L449.7,450.5 L444.2,450.5 Z" fill="#1baf7a" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b2" d="M526.8,445.4 L529.5,450.7 L524.0,450.7 Z" fill="#1baf7a" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b2" d="M573.5,454.2 L576.3,459.5 L570.8,459.5 Z" fill="#1baf7a" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b2" d="M606.7,443.2 L611.2,451.8 L602.2,451.8 Z" fill="#1baf7a" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b2" d="M653.4,445.2 L656.1,450.5 L650.6,450.5 Z" fill="#1baf7a" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b2" d="M686.5,484.6 L689.3,489.8 L683.8,489.8 Z" fill="#1baf7a" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b2" d="M712.3,478.0 L715.0,483.2 L709.5,483.2 Z" fill="#1baf7a" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b2" d="M733.3,488.8 L736.0,494.0 L730.5,494.0 Z" fill="#1baf7a" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b2" d="M766.4,490.6 L769.2,495.8 L763.7,495.8 Z" fill="#1baf7a" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b2" d="M792.1,469.5 L794.9,474.7 L789.4,474.7 Z" fill="#1baf7a" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b2" d="M822.4,482.0 L825.1,487.2 L819.6,487.2 Z" fill="#1baf7a" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b2" d="M846.3,483.2 L849.0,488.4 L843.5,488.4 Z" fill="#1baf7a" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b2" d="M872.0,487.0 L876.5,495.6 L867.5,495.6 Z" fill="#1baf7a" stroke="#ffffff" stroke-width="1.5"/>
+<circle data-role="marker" data-policy="b2u" cx="76.0" cy="456.2" r="4" fill="#ffffff" stroke="#8a8883" stroke-width="2"/>
+<circle data-role="marker" data-policy="b2u" cx="122.7" cy="456.2" r="2.25" fill="#ffffff" stroke="#8a8883" stroke-width="2"/>
+<circle data-role="marker" data-policy="b2u" cx="181.6" cy="456.1" r="2.25" fill="#ffffff" stroke="#8a8883" stroke-width="2"/>
+<circle data-role="marker" data-policy="b2u" cx="261.5" cy="456.1" r="2.25" fill="#ffffff" stroke="#8a8883" stroke-width="2"/>
+<circle data-role="marker" data-policy="b2u" cx="308.2" cy="461.0" r="2.25" fill="#ffffff" stroke="#8a8883" stroke-width="2"/>
+<circle data-role="marker" data-policy="b2u" cx="341.3" cy="456.1" r="4" fill="#ffffff" stroke="#8a8883" stroke-width="2"/>
+<circle data-role="marker" data-policy="b2u" cx="388.1" cy="456.1" r="2.25" fill="#ffffff" stroke="#8a8883" stroke-width="2"/>
+<circle data-role="marker" data-policy="b2u" cx="446.9" cy="443.6" r="2.25" fill="#ffffff" stroke="#8a8883" stroke-width="2"/>
+<circle data-role="marker" data-policy="b2u" cx="526.8" cy="443.7" r="2.25" fill="#ffffff" stroke="#8a8883" stroke-width="2"/>
+<circle data-role="marker" data-policy="b2u" cx="573.5" cy="455.2" r="2.25" fill="#ffffff" stroke="#8a8883" stroke-width="2"/>
+<circle data-role="marker" data-policy="b2u" cx="606.7" cy="444.0" r="4" fill="#ffffff" stroke="#8a8883" stroke-width="2"/>
+<circle data-role="marker" data-policy="b2u" cx="653.4" cy="460.4" r="2.25" fill="#ffffff" stroke="#8a8883" stroke-width="2"/>
+<circle data-role="marker" data-policy="b2u" cx="686.5" cy="481.3" r="2.25" fill="#ffffff" stroke="#8a8883" stroke-width="2"/>
+<circle data-role="marker" data-policy="b2u" cx="712.3" cy="482.8" r="2.25" fill="#ffffff" stroke="#8a8883" stroke-width="2"/>
+<circle data-role="marker" data-policy="b2u" cx="733.3" cy="483.7" r="2.25" fill="#ffffff" stroke="#8a8883" stroke-width="2"/>
+<circle data-role="marker" data-policy="b2u" cx="766.4" cy="485.2" r="2.25" fill="#ffffff" stroke="#8a8883" stroke-width="2"/>
+<circle data-role="marker" data-policy="b2u" cx="792.1" cy="465.6" r="2.25" fill="#ffffff" stroke="#8a8883" stroke-width="2"/>
+<circle data-role="marker" data-policy="b2u" cx="822.4" cy="471.4" r="2.25" fill="#ffffff" stroke="#8a8883" stroke-width="2"/>
+<circle data-role="marker" data-policy="b2u" cx="846.3" cy="497.4" r="2.25" fill="#ffffff" stroke="#8a8883" stroke-width="2"/>
+<circle data-role="marker" data-policy="b2u" cx="872.0" cy="495.8" r="4" fill="#ffffff" stroke="#8a8883" stroke-width="2"/>
+<path data-role="marker" data-policy="b3" d="M76.0,222.8 L81.4,228.2 L76.0,233.6 L70.6,228.2 Z" fill="#eda100" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b3" d="M122.7,226.3 L126.0,229.6 L122.7,232.9 L119.4,229.6 Z" fill="#eda100" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b3" d="M181.6,224.8 L184.9,228.1 L181.6,231.4 L178.3,228.1 Z" fill="#eda100" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b3" d="M261.5,224.8 L264.8,228.1 L261.5,231.4 L258.2,228.1 Z" fill="#eda100" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b3" d="M308.2,236.4 L311.5,239.7 L308.2,243.0 L304.9,239.7 Z" fill="#eda100" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b3" d="M341.3,222.7 L346.7,228.1 L341.3,233.5 L335.9,228.1 Z" fill="#eda100" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b3" d="M388.1,226.3 L391.4,229.6 L388.1,232.9 L384.8,229.6 Z" fill="#eda100" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b3" d="M446.9,224.8 L450.2,228.1 L446.9,231.4 L443.6,228.1 Z" fill="#eda100" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b3" d="M526.8,231.5 L530.1,234.8 L526.8,238.1 L523.5,234.8 Z" fill="#eda100" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b3" d="M573.5,247.2 L576.8,250.5 L573.5,253.8 L570.2,250.5 Z" fill="#eda100" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b3" d="M606.7,235.5 L612.1,240.9 L606.7,246.3 L601.3,240.9 Z" fill="#eda100" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b3" d="M653.4,238.2 L656.7,241.5 L653.4,244.8 L650.1,241.5 Z" fill="#eda100" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b3" d="M686.5,261.5 L689.8,264.8 L686.5,268.1 L683.2,264.8 Z" fill="#eda100" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b3" d="M712.3,304.0 L715.6,307.3 L712.3,310.6 L709.0,307.3 Z" fill="#eda100" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b3" d="M733.3,340.8 L736.6,344.1 L733.3,347.4 L730.0,344.1 Z" fill="#eda100" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b3" d="M766.4,367.8 L769.7,371.1 L766.4,374.4 L763.1,371.1 Z" fill="#eda100" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b3" d="M792.1,386.2 L795.4,389.5 L792.1,392.8 L788.8,389.5 Z" fill="#eda100" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b3" d="M822.4,422.7 L825.7,426.0 L822.4,429.3 L819.1,426.0 Z" fill="#eda100" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b3" d="M846.3,427.4 L849.6,430.7 L846.3,434.0 L843.0,430.7 Z" fill="#eda100" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b3" d="M872.0,441.6 L877.4,447.0 L872.0,452.4 L866.6,447.0 Z" fill="#eda100" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b4" d="M76.0,330.3 L80.5,321.7 L71.5,321.7 Z" fill="#e87ba4" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b4" d="M122.7,328.2 L125.5,323.0 L120.0,323.0 Z" fill="#e87ba4" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b4" d="M181.6,328.2 L184.3,323.0 L178.8,323.0 Z" fill="#e87ba4" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b4" d="M261.5,328.2 L264.2,323.0 L258.7,323.0 Z" fill="#e87ba4" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b4" d="M308.2,328.2 L310.9,323.0 L305.4,323.0 Z" fill="#e87ba4" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b4" d="M341.3,330.2 L345.8,321.7 L336.8,321.7 Z" fill="#e87ba4" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b4" d="M388.1,328.2 L390.8,323.0 L385.3,323.0 Z" fill="#e87ba4" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b4" d="M446.9,328.2 L449.7,323.0 L444.2,323.0 Z" fill="#e87ba4" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b4" d="M526.8,328.2 L529.5,323.0 L524.0,323.0 Z" fill="#e87ba4" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b4" d="M573.5,328.2 L576.3,323.0 L570.8,323.0 Z" fill="#e87ba4" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b4" d="M606.7,330.2 L611.2,321.7 L602.2,321.7 Z" fill="#e87ba4" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b4" d="M653.4,328.2 L656.1,323.0 L650.6,323.0 Z" fill="#e87ba4" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b4" d="M686.5,328.2 L689.3,323.0 L683.8,323.0 Z" fill="#e87ba4" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b4" d="M712.3,328.2 L715.0,323.0 L709.5,323.0 Z" fill="#e87ba4" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b4" d="M733.3,328.2 L736.0,323.0 L730.5,323.0 Z" fill="#e87ba4" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b4" d="M766.4,328.2 L769.2,323.0 L763.7,323.0 Z" fill="#e87ba4" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b4" d="M792.1,328.2 L794.9,323.0 L789.4,323.0 Z" fill="#e87ba4" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b4" d="M822.4,328.2 L825.1,323.0 L819.6,323.0 Z" fill="#e87ba4" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b4" d="M846.3,328.2 L849.0,323.0 L843.5,323.0 Z" fill="#e87ba4" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b4" d="M872.0,330.2 L876.5,321.7 L867.5,321.7 Z" fill="#e87ba4" stroke="#ffffff" stroke-width="1.5"/>
+<path data-role="marker" data-policy="b5" d="M76.0,219.7 L81.0,224.6 L76.0,229.6 L71.0,224.6 Z" fill="#ffffff" stroke="#7b5cd6" stroke-width="2"/>
+<path data-role="marker" data-policy="b5" d="M122.7,219.8 L125.7,222.8 L122.7,225.8 L119.7,222.8 Z" fill="#ffffff" stroke="#7b5cd6" stroke-width="2"/>
+<path data-role="marker" data-policy="b5" d="M181.6,221.5 L184.6,224.6 L181.6,227.6 L178.6,224.6 Z" fill="#ffffff" stroke="#7b5cd6" stroke-width="2"/>
+<path data-role="marker" data-policy="b5" d="M261.5,221.5 L264.5,224.5 L261.5,227.6 L258.4,224.5 Z" fill="#ffffff" stroke="#7b5cd6" stroke-width="2"/>
+<path data-role="marker" data-policy="b5" d="M308.2,232.1 L311.2,235.1 L308.2,238.1 L305.2,235.1 Z" fill="#ffffff" stroke="#7b5cd6" stroke-width="2"/>
+<path data-role="marker" data-policy="b5" d="M341.3,219.6 L346.3,224.5 L341.3,229.5 L336.4,224.5 Z" fill="#ffffff" stroke="#7b5cd6" stroke-width="2"/>
+<path data-role="marker" data-policy="b5" d="M388.1,219.7 L391.1,222.7 L388.1,225.8 L385.0,222.7 Z" fill="#ffffff" stroke="#7b5cd6" stroke-width="2"/>
+<path data-role="marker" data-policy="b5" d="M446.9,221.5 L449.9,224.5 L446.9,227.6 L443.9,224.5 Z" fill="#ffffff" stroke="#7b5cd6" stroke-width="2"/>
+<path data-role="marker" data-policy="b5" d="M526.8,219.4 L529.8,222.4 L526.8,225.4 L523.8,222.4 Z" fill="#ffffff" stroke="#7b5cd6" stroke-width="2"/>
+<path data-role="marker" data-policy="b5" d="M573.5,232.3 L576.5,235.3 L573.5,238.3 L570.5,235.3 Z" fill="#ffffff" stroke="#7b5cd6" stroke-width="2"/>
+<path data-role="marker" data-policy="b5" d="M606.7,218.9 L611.6,223.8 L606.7,228.8 L601.7,223.8 Z" fill="#ffffff" stroke="#7b5cd6" stroke-width="2"/>
+<path data-role="marker" data-policy="b5" d="M653.4,219.1 L656.4,222.1 L653.4,225.1 L650.4,222.1 Z" fill="#ffffff" stroke="#7b5cd6" stroke-width="2"/>
+<path data-role="marker" data-policy="b5" d="M686.5,240.5 L689.6,243.5 L686.5,246.5 L683.5,243.5 Z" fill="#ffffff" stroke="#7b5cd6" stroke-width="2"/>
+<path data-role="marker" data-policy="b5" d="M712.3,292.7 L715.3,295.7 L712.3,298.8 L709.2,295.7 Z" fill="#ffffff" stroke="#7b5cd6" stroke-width="2"/>
+<path data-role="marker" data-policy="b5" d="M733.3,357.0 L736.3,360.1 L733.3,363.1 L730.2,360.1 Z" fill="#ffffff" stroke="#7b5cd6" stroke-width="2"/>
+<path data-role="marker" data-policy="b5" d="M766.4,355.8 L769.4,358.8 L766.4,361.9 L763.4,358.8 Z" fill="#ffffff" stroke="#7b5cd6" stroke-width="2"/>
+<path data-role="marker" data-policy="b5" d="M792.1,387.3 L795.2,390.3 L792.1,393.4 L789.1,390.3 Z" fill="#ffffff" stroke="#7b5cd6" stroke-width="2"/>
+<path data-role="marker" data-policy="b5" d="M822.4,379.5 L825.4,382.5 L822.4,385.5 L819.3,382.5 Z" fill="#ffffff" stroke="#7b5cd6" stroke-width="2"/>
+<path data-role="marker" data-policy="b5" d="M846.3,404.6 L849.3,407.6 L846.3,410.6 L843.3,407.6 Z" fill="#ffffff" stroke="#7b5cd6" stroke-width="2"/>
+<path data-role="marker" data-policy="b5" d="M872.0,406.5 L877.0,411.5 L872.0,416.4 L867.0,411.5 Z" fill="#ffffff" stroke="#7b5cd6" stroke-width="2"/>
+<circle data-role="marker" data-policy="srcla" cx="76.0" cy="225.9" r="5" fill="#2a78d6" stroke="#ffffff" stroke-width="1.5"/>
+<circle data-role="marker" data-policy="srcla" cx="122.7" cy="224.9" r="3.5" fill="#2a78d6" stroke="#ffffff" stroke-width="1.5"/>
+<circle data-role="marker" data-policy="srcla" cx="181.6" cy="225.8" r="3.5" fill="#2a78d6" stroke="#ffffff" stroke-width="1.5"/>
+<circle data-role="marker" data-policy="srcla" cx="261.5" cy="225.8" r="3.5" fill="#2a78d6" stroke="#ffffff" stroke-width="1.5"/>
+<circle data-role="marker" data-policy="srcla" cx="308.2" cy="237.3" r="3.5" fill="#2a78d6" stroke="#ffffff" stroke-width="1.5"/>
+<circle data-role="marker" data-policy="srcla" cx="341.3" cy="225.8" r="5" fill="#2a78d6" stroke="#ffffff" stroke-width="1.5"/>
+<circle data-role="marker" data-policy="srcla" cx="388.1" cy="226.0" r="3.5" fill="#2a78d6" stroke="#ffffff" stroke-width="1.5"/>
+<circle data-role="marker" data-policy="srcla" cx="446.9" cy="248.3" r="3.5" fill="#2a78d6" stroke="#ffffff" stroke-width="1.5"/>
+<circle data-role="marker" data-policy="srcla" cx="526.8" cy="272.1" r="3.5" fill="#2a78d6" stroke="#ffffff" stroke-width="1.5"/>
+<circle data-role="marker" data-policy="srcla" cx="573.5" cy="268.9" r="3.5" fill="#2a78d6" stroke="#ffffff" stroke-width="1.5"/>
+<circle data-role="marker" data-policy="srcla" cx="606.7" cy="271.7" r="5" fill="#2a78d6" stroke="#ffffff" stroke-width="1.5"/>
+<circle data-role="marker" data-policy="srcla" cx="653.4" cy="322.2" r="3.5" fill="#2a78d6" stroke="#ffffff" stroke-width="1.5"/>
+<circle data-role="marker" data-policy="srcla" cx="686.5" cy="339.8" r="3.5" fill="#2a78d6" stroke="#ffffff" stroke-width="1.5"/>
+<circle data-role="marker" data-policy="srcla" cx="712.3" cy="330.0" r="3.5" fill="#2a78d6" stroke="#ffffff" stroke-width="1.5"/>
+<circle data-role="marker" data-policy="srcla" cx="733.3" cy="345.2" r="3.5" fill="#2a78d6" stroke="#ffffff" stroke-width="1.5"/>
+<circle data-role="marker" data-policy="srcla" cx="766.4" cy="384.1" r="3.5" fill="#2a78d6" stroke="#ffffff" stroke-width="1.5"/>
+<circle data-role="marker" data-policy="srcla" cx="792.1" cy="424.1" r="3.5" fill="#2a78d6" stroke="#ffffff" stroke-width="1.5"/>
+<circle data-role="marker" data-policy="srcla" cx="822.4" cy="430.9" r="3.5" fill="#2a78d6" stroke="#ffffff" stroke-width="1.5"/>
+<circle data-role="marker" data-policy="srcla" cx="846.3" cy="448.9" r="3.5" fill="#2a78d6" stroke="#ffffff" stroke-width="1.5"/>
+<circle data-role="marker" data-policy="srcla" cx="872.0" cy="476.1" r="5" fill="#2a78d6" stroke="#ffffff" stroke-width="1.5"/>
+</svg>
